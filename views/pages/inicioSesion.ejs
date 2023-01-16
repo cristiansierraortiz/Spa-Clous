@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Control Financiero</title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <% /* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+    <% /* <meta name="robots" content="noindex"> */%>
+
+      <!-- estilos externos-->
+      <link rel="stylesheet" href="/vendor/css/login.css">
+      <!-- -->
+</head>
+
+<body>
+
+  <div class="container" id="container">
+    <div class="form-container sign-in-container">
+      <form action="/procesar-inicio-sesion" method="post">
+        <h1>Inicio de Sesión</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+        </div>
+        <span>o utilice su cuenta</span>
+        <input type="email" name="email" id="email" placeholder="Correo" />
+        <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" />
+        <a href="#">Olvido su contraseña?</a>
+        <button>Ingresar</button>
+        <div class="mensaje-error">
+          <% flash.get('mensaje').forEach(function (msg) { %>
+            <p>
+              <i><span class="fa fa-circle-xmark"></span></i>
+              <%=msg%>
+            </p>
+            <% }) %>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- scripts externos -->
+  <script src="https://kit.fontawesome.com/41dcbddeb7.js" crossorigin="anonymous"></script>
+  <!-- -->
+
+</body>
+
+</html>

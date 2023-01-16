@@ -1,0 +1,59 @@
+<h6 class="titulo-pagina-menu">Usuarios</h6>
+
+<div class="content">
+  <div class="container">
+
+    <div class="mb-5">
+      <h5>Agregar Usuario</h5>
+    </div>
+
+    <div class="mensaje-error">
+      <% flash.get('mensaje').forEach(function (msg) { %>
+        <p>
+          <i><span class="fa fa-circle-xmark"></span></i>
+          <%=msg%>
+        </p>
+        <% }) %>
+    </div>
+
+    <form class="row g-4 needs-validation" method="post" action="/procesar-agregar-usuario">
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <label for="nombreUsuario" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario"
+            placeholder="nombres completos" autocomplete="off" required>
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="apellidoUsuario" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="apellidoUsuario" name="apellidoUsuario"
+            placeholder="apellidos completos" autocomplete="off" required>
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="correoUsuario" class="form-label">Correo</label>
+          <input type="text" class="form-control" id="correoUsuario" name="correoUsuario"
+            aria-describedby="correoUsuario" autocomplete="off" placeholder="correo@dominio.com" required>
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="contrasenaUsuario" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contrasenaUsuario" name="contrasenaUsuario" autocomplete="off"
+            placeholder="contraseña" required>
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="estadoUsuario" class="form-label">Estado Usuario</label>
+          <select class="form-select" id="estadoUsuario" name="estadoUsuario" autocomplete="off" required>
+            <option selected disabled value="">seleccione un estado</option>
+            <option>Activo</option>
+            <option>Inactivo</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <button class="btn btn-primary" type="submit">Agregar Usuario</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+</div>

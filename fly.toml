@@ -1,9 +1,9 @@
-# fly.toml file generated for spa-clous on 2023-01-16T15:44:17-05:00
+# fly.toml file generated for spa-clous on 2023-01-17T03:25:44-05:00
 
 app = "spa-clous"
 kill_signal = "SIGINT"
 kill_timeout = 5
-# processes = []
+processes = []
 
 [env]
 
@@ -13,7 +13,7 @@ kill_timeout = 5
 [[services]]
   http_checks = []
   internal_port = 8080
-  # processes = ["app"]
+  processes = ["app"]
   protocol = "tcp"
   script_checks = []
   [services.concurrency]

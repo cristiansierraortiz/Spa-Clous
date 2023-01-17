@@ -36,6 +36,6 @@ module.exports.views = {
   *                                                                          *
   ***************************************************************************/
 
-  layout: 'layouts/Menu'
+  layout: 'layouts/menu.ejs'
 
 };

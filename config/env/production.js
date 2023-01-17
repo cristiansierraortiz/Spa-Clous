@@ -46,6 +46,7 @@ module.exports = {
     default: {
       adapter: require("sails-postgresql"),
       // url: "postgresql://postgres:123456@localhost:5432/control-financiero",
+      // url: "postgresql://postgres:123456@localhost:5432/spa-clous",
       // url: "postgres://postgres:NtcpKLCT5zJo0K7@spa-clous-postgres.internal:5432/control-financiero",
       url: "postgres://postgres:NtcpKLCT5zJo0K7@spa-clous-postgres.internal:5432/spa-clous",
       //--------------------------------------------------------------------------

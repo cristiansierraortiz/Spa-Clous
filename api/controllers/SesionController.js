@@ -7,23 +7,23 @@
 
 module.exports = {
   inicioSesion: async (peticion, respuesta) => {
-    respuesta.view("pages/inicioSesion", { layout: "" });
+    respuesta.view("layouts/inicioSesion", { layout: "" });
   },
 
   procesarInicioSesion: async (peticion, respuesta) => {
-    let usuario = await Usuarios.findOne({
-      email_usr: peticion.body.email,
-      pass_usr: peticion.body.contrasena,
+    let administrador = await Administradores.findOne({
+      correo_admin: peticion.body.correo,
+      contrasena_admin: peticion.body.contrasena,
     });
 
-    if (usuario) {
-      if (!usuario.est_usr) {
-        peticion.addFlash("mensaje", "Usuario inactivo");
+    if (administrador) {
+      if (!administrador.estado_admin) {
+        peticion.addFlash("mensaje", "Administrador inactivo");
         return respuesta.redirect("/");
       } else {
-        peticion.session.usuario = usuario;
+        peticion.session.administrador = administrador;
         peticion.session.nombreCompleto =
-          usuario.nom_usr.toUpperCase() + " " + usuario.apell_usr.toUpperCase();
+        administrador.nombres_admin.toUpperCase() + " " + administrador.primer_apellido_admin.toUpperCase();
         return respuesta.redirect("/menu-principal");
       }
     } else {
@@ -33,7 +33,7 @@ module.exports = {
   },
 
   menuPrincipal: async (peticion, respuesta) => {
-    if (peticion.session && peticion.session.usuario) {
+    if (peticion.session && peticion.session.administrador) {
       respuesta.view("pages/dashboard");
     } else {
       return respuesta.redirect("/");
@@ -41,7 +41,7 @@ module.exports = {
   },
 
   cerrarSesion: async (peticion, respuesta) => {
-    peticion.session.usuario = undefined;
+    peticion.session.administrador = undefined;
     return respuesta.redirect("/");
   },
 };

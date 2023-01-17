@@ -28,23 +28,25 @@ module.exports.routes = {
 
   "GET /dashboard": "DashboardController.dashboard",
 
-  "GET /usuarios": "UsuariosController.usuarios",
+  "GET /administradores": "AdministradoresController.administradores",
 
-  "GET /ingresos": "IngresosController.ingresos",
+  "GET /clientes": "ClientesController.clientes",
 
-  "GET /egresos": "EgresosController.egresos",
+  "GET /citas": "CitasController.citas",
 
-  "GET /cuentas-por-cobrar": "CuentasPorCobrarController.cuentasPorCobrar",
+  "GET /colores": "CromoterapiaController.cromoterapia",
 
-  "GET /cuentas-por-pagar": "CuentasPorPagarController.cuentasPorPagar",
+  "GET /aromas": "AromaterapiaController.aromaterapia",
 
-  "GET /ahorros": "AhorrosController.ahorros",
+  "GET /generos-musicales": "MusicoterapiaController.musicoterapia",
+
+  "GET /terapias": "TerapiasController.terapias",
 
   // acciones Usuarios
 
-  "GET /agregar-usuario": "UsuariosController.agregarUsuario",
+  "GET /agregar-administrador": "AdministradoresController.agregarAdministrador",
 
-  "POST /procesar-agregar-usuario": "UsuariosController.procesarAgregarUsuario",
+  "POST /procesar-agregar-administrador": "AdministradoresController.procesarAgregarAdministrador",
 
   /***************************************************************************
    *                                                                          *

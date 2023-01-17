@@ -46,7 +46,8 @@ module.exports = {
     default: {
       adapter: require("sails-postgresql"),
       // url: "postgresql://postgres:123456@localhost:5432/control-financiero",
-      url: "postgres://postgres:NtcpKLCT5zJo0K7@spa-clous-postgres.internal:5432/control-financiero",
+      // url: "postgres://postgres:NtcpKLCT5zJo0K7@spa-clous-postgres.internal:5432/control-financiero",
+      url: "postgres://postgres:NtcpKLCT5zJo0K7@spa-clous-postgres.internal:5432/spa-clous",
       //--------------------------------------------------------------------------
       //  /\   To avoid checking it in to version control, you might opt to set
       //  ||   sensitive credentials like `url` using an environment variable.

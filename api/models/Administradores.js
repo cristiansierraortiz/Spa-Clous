@@ -1,5 +1,5 @@
 /**
- * Usuarios.js
+ * Administradores.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -13,17 +13,19 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    nom_usr: { type: 'string' },
+    nombres_admin: { type: 'string' },
 
-    apell_usr: { type: 'string' },
+    primer_apellido_admin: { type: 'string' },
 
-    email_usr: { type: 'string' },
+    segundo_apellido_admin: { type: 'string' },
 
-    pass_usr: { type: 'string' },
+    correo_admin: { type: 'string' },
 
-    fec_alta: { type: 'string', columnType: 'date' },
+    contrasena_admin: { type: 'string' },
 
-    est_usr: { type: 'boolean' }
+    fecha_alta: { type: 'string', columnType: 'date' },
+
+    estado_admin: { type: 'boolean' }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

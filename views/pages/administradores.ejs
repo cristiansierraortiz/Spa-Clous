@@ -1,0 +1,67 @@
+<h6 class="titulo-pagina-menu">Administradores</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="acciones-datatable mt-5">
+      <a href="/agregar-administrador" class="btn btn-primary btn-sm"><span class="fa fa-user-plus"></span></a>
+    </div>
+    <div class="mt-4">
+      <table id="administradores" class="display nowrap">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellidos</th>
+            <th scope="col">correo</th>
+            <th scope="col">fecha_alta</th>
+            <th scope="col">estado</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% administradores.forEach( administrador=> { %>
+            <tr>
+              <td>
+                <%= administrador.id %>
+              </td>
+              <td>
+                <%= administrador.nombres_admin %>
+              </td>
+              <td>
+                <% let apellidos %>
+                  <%= apellidos=administrador.primer_apellido_admin + " " + administrador.segundo_apellido_admin %>
+              </td>
+              <td>
+                <%= administrador.correo_admin%>
+              </td>
+              <td>
+                <% let fechaBD=new Date(administrador.fecha_alta) %>
+                  <% let fecha=fechaBD.getDate() + "-" + fechaBD.getMonth() + "-" + fechaBD.getFullYear() %>
+                    <%= fecha %>
+              </td>
+              <td>
+                <span class="<%= administrador.estado_admin ? " badge text-bg-success" : "badge text-bg-danger" %>"><%=
+                    administrador.estado_admin ? "activo" : "inactivo" %></span>
+              </td>
+              <td>
+                <div class="dropdown">
+                  <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown link
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">detalles</a></li>
+                    <li><a class="dropdown-item" href="#">editar</a></li>
+                    <li><a class="dropdown-item" href="#">eliminar</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <% }) %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

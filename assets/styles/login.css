@@ -96,7 +96,7 @@ input {
     width: 100%;
 }
 
-.container {
+.container-login {
     background-color: transparent;
     position: relative;
     overflow: hidden;

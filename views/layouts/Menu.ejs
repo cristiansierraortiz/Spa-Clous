@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>Control Financiero</title>
+  <title>SPA Clous</title>
 
   <!-- Viewport mobile tag for sensible mobile support -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -31,17 +31,19 @@
             + Import stylesheets from other directories
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
-
       <!--STYLES-->
-      <link rel="stylesheet" href="/min/production.min.css">
+      <link rel="stylesheet" href="/styles/estilos.css">
+      <link rel="stylesheet" href="/styles/importer.css">
+      <link rel="stylesheet" href="/styles/login.css">
+      <link rel="stylesheet" href="/styles/owl.carousel.min.css">
       <!--STYLES END-->
 
-      <!-- estilos externos-->
+      <!--STYLES ADD-->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-      <link rel="stylesheet" href="/vendor/css/datatable.css">
-      <link rel="stylesheet" href="/vendor/css/owl.carousel.min.css">
-      <!-- -->
+      <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+      <!--STYLES ADD END-->
+
 </head>
 
 <body>
@@ -54,8 +56,8 @@
           <span class="sr-only">Toggle Menu</span>
         </button>
       </div>
-      <div class="p-4">
-        <h1><a href="/dashboard" class="logo">Control Financiero<span>
+      <div class="barra">
+        <h1><a href="/dashboard" class="logo">SPA CLOUS<span>
               <%= session.nombreCompleto%>
             </span></a></h1>
         <ul class="list-unstyled components mt-5 mb-5">
@@ -63,22 +65,25 @@
             <a href="/dashboard"><span class="fa fa-home mr-3"></span>Dashboard</a>
           </li>
           <li class="">
-            <a href="/usuarios"><span class="fa fa-users mr-3"></span>Usuarios</a>
+            <a href="/administradores"><span class="fa fa-people-arrows mr-3"></span>Administradores</a>
           </li>
           <li class="">
-            <a href="/ingresos"><span class="fa fa-sack-dollar mr-3"></span>Ingresos</a>
+            <a href="/clientes"><span class="fa fa-people-group mr-3"></span>Clientes</a>
           </li>
           <li class="">
-            <a href="/egresos"><span class="fa fa-sack-xmark mr-3"></span>Egresos</a>
+            <a href="/citas"><span class="fa fa-calendar-days mr-3"></span>Citas</a>
           </li>
           <li class="">
-            <a href="/cuentas-por-pagar"><span class="fa fa-file-invoice-dollar mr-3"></span>Cuentas por Pagar</a>
+            <a href="/colores"><span class="fa fa-palette mr-3"></span>Cromoterapia</a>
           </li>
           <li class="">
-            <a href="/cuentas-por-cobrar"><span class="fa fa-money-check-dollar mr-3"></span>Cuentas Por Cobrar</a>
+            <a href="/aromas"><span class="fa fa-spray-can mr-3"></span>Aromaterapia</a>
           </li>
           <li class="">
-            <a href="/ahorros"><span class="fa fa-piggy-bank mr-3"></span>Ahorros</a>
+            <a href="/generos-musicales"><span class="fa fa-music mr-3"></span>Musicoterapia</a>
+          </li>
+          <li class="">
+            <a href="/terapias"><span class="fa fa-person-dots-from-line mr-3"></span>Terapias</a>
           </li>
         </ul>
 
@@ -161,20 +166,24 @@
     -->
 
   <!--SCRIPTS-->
-  <script src="/min/production.min.js"></script>
+  <script src="/dependencies/sails.io.js"></script>
+  <script src="/js/1.jquery.min.js"></script>
+  <script src="/js/2.jquery-3.5.1.js"></script>
+  <script src="/js/login.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/popper.min.js"></script>
   <!--SCRIPTS END-->
 
-  <!-- scripts externos -->
+  <!--SCRIPTS ADD-->
   <script src="https://kit.fontawesome.com/41dcbddeb7.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
-  <script src="/vendor/js/jquery-3.3.1.min.js"></script>
-  <script src="/vendor/js/main.js"></script>
-  <script src="/vendor/js/owl.carousel.min.js"></script>
-  <script src="/vendor/js/popper.min.js"></script>
-  <script src="/vendor/js/login.js"></script>
-  <!-- -->
+  <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"></script>
+  <!--SCRIPTS ADD END-->
+
 </body>
 
 </html>

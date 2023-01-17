@@ -72,7 +72,7 @@ module.exports.models = {
   attributes: {
     // createdAt: { type: 'number', autoCreatedAt: true, },
     // updatedAt: { type: 'number', autoUpdatedAt: true, },
-    id: { type: 'number', autoIncrement: true, columnName: 'id_usr' },
+    id: { type: 'number', autoIncrement: true, columnName: 'id_admin' },
     // id_usr: { type: 'number', autoIncrement: true, },
     // id_ing: { type: 'number', autoIncrement: true, },
     // id_egr: { type: 'number', autoIncrement: true, },

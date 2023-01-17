@@ -52,8 +52,9 @@ module.exports.datastores = {
     // url: 'mysql://user:password@host:port/database',
 
     adapter: require('sails-postgresql'),
+    url: 'postgresql://postgres:123456@localhost:5432/spa-clous',
     // url: 'postgresql://postgres:123456@localhost:5432/control-financiero',
-    url: 'postgres://postgres:NtcpKLCT5zJo0K7@169.155.52.58:5432/control-financiero',
+    // url: 'postgres://postgres:NtcpKLCT5zJo0K7@169.155.52.58:5432/control-financiero',
   },
 
 

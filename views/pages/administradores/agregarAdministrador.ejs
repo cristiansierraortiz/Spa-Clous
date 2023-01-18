@@ -1,13 +1,13 @@
-<h6 class="titulo-pagina-menu">Usuarios</h6>
+<h6 class="titulo-pagina-menu">Administradors</h6>
 
 <div class="content">
   <div class="container">
 
     <div class="mb-5">
-      <h5>Agregar Usuario</h5>
+      <h5>Agregar Administrador</h5>
     </div>
 
-    <div class="mensaje-error">
+    <div class="alert alert-danger" role="alert">
       <% flash.get('mensaje').forEach(function (msg) { %>
         <p>
           <i><span class="fa fa-circle-xmark"></span></i>
@@ -16,31 +16,36 @@
         <% }) %>
     </div>
 
-    <form class="row g-4 needs-validation" method="post" action="/procesar-agregar-usuario">
+    <form class="row g-4" method="post" action="/procesar-agregar-administrador">
       <div class="row">
         <div class="col-md-5 mb-3">
-          <label for="nombreUsuario" class="form-label">Nombres</label>
-          <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario"
+          <label for="nombreAdministrador" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombreAdministrador" name="nombreAdministrador"
             placeholder="nombres completos" autocomplete="off" required>
         </div>
         <div class="col-md-5 mb-3">
-          <label for="apellidoUsuario" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" id="apellidoUsuario" name="apellidoUsuario"
+          <label for="apellido1Administrador" class="form-label">Primer Apellido</label>
+          <input type="text" class="form-control" id="apellido1Administrador" name="apellido1Administrador"
             placeholder="apellidos completos" autocomplete="off" required>
         </div>
         <div class="col-md-5 mb-3">
-          <label for="correoUsuario" class="form-label">Correo</label>
-          <input type="text" class="form-control" id="correoUsuario" name="correoUsuario"
-            aria-describedby="correoUsuario" autocomplete="off" placeholder="correo@dominio.com" required>
+          <label for="apellido2Administrador" class="form-label">Segundo Apellidos</label>
+          <input type="text" class="form-control" id="apellido2Administrador" name="apellido2Administrador"
+            placeholder="apellidos completos" autocomplete="off" required>
         </div>
         <div class="col-md-5 mb-3">
-          <label for="contrasenaUsuario" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" id="contrasenaUsuario" name="contrasenaUsuario" autocomplete="off"
-            placeholder="contraseña" required>
+          <label for="correoAdministrador" class="form-label">Correo</label>
+          <input type="text" class="form-control" id="correoAdministrador" name="correoAdministrador"
+            aria-describedby="correoAdministrador" autocomplete="off" placeholder="correo@dominio.com" required>
         </div>
         <div class="col-md-5 mb-3">
-          <label for="estadoUsuario" class="form-label">Estado Usuario</label>
-          <select class="form-select" id="estadoUsuario" name="estadoUsuario" autocomplete="off" required>
+          <label for="contrasenaAdministrador" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contrasenaAdministrador" name="contrasenaAdministrador"
+            autocomplete="off" placeholder="contraseña" required>
+        </div>
+        <div class="col-md-5 mb-3">
+          <label for="estadoAdministrador" class="form-label">Estado Administrador</label>
+          <select class="form-select" id="estadoAdministrador" name="estadoAdministrador" autocomplete="off" required>
             <option selected disabled value="">seleccione un estado</option>
             <option>Activo</option>
             <option>Inactivo</option>
@@ -49,7 +54,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 mt-4">
-          <button class="btn btn-primary" type="submit">Agregar Usuario</button>
+          <button class="btn btn-primary" type="submit">Agregar Administrador</button>
         </div>
       </div>
     </form>

@@ -7,7 +7,7 @@
 
 module.exports = {
   inicioSesion: async (peticion, respuesta) => {
-    respuesta.view("layouts/inicioSesion", { layout: "" });
+    respuesta.view("layouts/login", { layout: "" });
   },
 
   procesarInicioSesion: async (peticion, respuesta) => {
@@ -23,7 +23,9 @@ module.exports = {
       } else {
         peticion.session.administrador = administrador;
         peticion.session.nombreCompleto =
-        administrador.nombres_admin.toUpperCase() + " " + administrador.primer_apellido_admin.toUpperCase();
+          administrador.nombres_admin.toUpperCase() +
+          " " +
+          administrador.primer_apellido_admin.toUpperCase();
         return respuesta.redirect("/menu-principal");
       }
     } else {
@@ -38,6 +40,16 @@ module.exports = {
     } else {
       return respuesta.redirect("/");
     }
+  },
+
+  encuesta: async (peticion, respuesta) => {
+    respuesta.view("layouts/encuesta", { layout: "" });
+  },
+
+  procesarEncuesta: async (peticion, respuesta) => {
+    let encuesta = peticion.body;
+    console.log(encuesta);
+    return respuesta.redirect("/encuesta");
   },
 
   cerrarSesion: async (peticion, respuesta) => {

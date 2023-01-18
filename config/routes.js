@@ -22,6 +22,10 @@ module.exports.routes = {
 
   "POST /procesar-inicio-sesion": "SesionController.procesarInicioSesion",
 
+  "GET /encuesta": "SesionController.encuesta",
+
+  "POST /procesar-encuesta": "SesionController.procesarEncuesta",
+
   "GET /menu-principal": "SesionController.menuPrincipal",
 
   "GET /cerrar-sesion": "SesionController.cerrarSesion",
@@ -44,9 +48,11 @@ module.exports.routes = {
 
   // acciones Usuarios
 
-  "GET /agregar-administrador": "AdministradoresController.agregarAdministrador",
+  "GET /agregar-administrador":
+    "AdministradoresController.agregarAdministrador",
 
-  "POST /procesar-agregar-administrador": "AdministradoresController.procesarAgregarAdministrador",
+  "POST /procesar-agregar-administrador":
+    "AdministradoresController.procesarAgregarAdministrador",
 
   /***************************************************************************
    *                                                                          *

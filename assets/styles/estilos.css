@@ -12694,6 +12694,12 @@ CSS sidebar
   padding-top: 50px;
 }
 
+#sidebar .barra img {
+  width: 120px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
 #sidebar .h6 {
   color: #fff;
 }
@@ -12715,7 +12721,7 @@ CSS sidebar
 }
 
 #sidebar h1 .logo span {
-  font-size: 14px;
+  font-size: 18px;
   color: #44bef1;
   display: block;
   text-decoration: none;

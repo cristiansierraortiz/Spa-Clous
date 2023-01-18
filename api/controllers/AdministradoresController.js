@@ -38,16 +38,17 @@ module.exports = {
       } else if (peticion.body.estadoAdministrador === "Inactivo") {
         estadoAdministrador = false;
       }
-      await Administradores.create({
-        nombre_admin: peticion.body.nombreAdministrador,
-        primer_apellido_admin: peticion.body.primerApellidoAdministrador,
-        segundo_apellido_admin: peticion.body.segundoApellidoAdministrador,
-        correo_admin: peticion.body.correoAdministrador,
-        constrasena_admin: peticion.body.contrasenaAdministrador,
-        fec_alta: fecha.toString(),
-        estado_admin: estadoAdministrador,
-      });
-      peticion.addFlash("mensaje", "Usuario registrado");
+      // await Administradores.create({
+      //   nombre_admin: peticion.body.nombreAdministrador,
+      //   primer_apellido_admin: peticion.body.primerApellidoAdministrador,
+      //   segundo_apellido_admin: peticion.body.segundoApellidoAdministrador,
+      //   correo_admin: peticion.body.correoAdministrador,
+      //   contrasena_admin: peticion.body.contrasenaAdministrador,
+      //   fecha_alta: fecha.toString(),
+      //   estado_admin: estadoAdministrador,
+      // });
+      console.log(peticion.body);
+      peticion.addFlash("mensaje", "Administrador registrado");
       return respuesta.redirect("/administradores");
     }
   },

@@ -8,7 +8,8 @@
 module.exports = {
   cromoterapia: async (peticion, respuesta) => {
     if (peticion.session && peticion.session.administrador){
-      respuesta.view("pages/cromoterapia");
+      let aromas = await Aromas.find();
+      respuesta.view("pages/cromoterapia/mostrarCromoterapia", { aromas });
     } else {
       return respuesta.redirect("/");
     }

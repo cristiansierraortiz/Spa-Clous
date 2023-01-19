@@ -46,13 +46,36 @@ module.exports.routes = {
 
   "GET /terapias": "TerapiasController.terapias",
 
-  // acciones Usuarios
+  // acciones Administradores
 
-  "GET /agregar-administrador":
-    "AdministradoresController.agregarAdministrador",
+  "GET /crear-administrador": "AdministradoresController.crearAdministrador",
 
-  "POST /procesar-agregar-administrador":
-    "AdministradoresController.procesarAgregarAdministrador",
+  "POST /procesar-crear-administrador":
+    "AdministradoresController.procesarCrearAdministrador",
+
+  "GET /editar-administrador/:adminId":
+    "AdministradoresController.editarAdministrador",
+
+  "POST /procesar-editar-administrador":
+    "AdministradoresController.procesarEditarAdministrador",
+
+  "GET /eliminar-administrador/:adminId":
+    "AdministradoresController.procesarEliminarAdministrador",
+
+  // acciones Clientes
+
+  "GET /crear-cliente": "ClientesController.crearCliente",
+
+  "POST /procesar-crear-cliente": "ClientesController.procesarCrearCliente",
+
+  "GET /editar-cliente/:clienteId": "ClientesController.editarCliente",
+
+  "POST /procesar-editar-cliente": "ClientesController.procesarEditarcliente",
+
+  "GET /eliminar-cliente/:clienteId":
+    "ClientesController.procesarEliminarcliente",
+
+  "GET /historial-cliente/:clienteId": "ClientesController.historialCliente",
 
   /***************************************************************************
    *                                                                          *

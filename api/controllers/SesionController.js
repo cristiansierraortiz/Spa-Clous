@@ -18,7 +18,7 @@ module.exports = {
 
     if (administrador) {
       if (!administrador.estado_admin) {
-        peticion.addFlash("mensaje", "Administrador inactivo");
+        peticion.addFlash("mensajeLogin", "Administrador inactivo");
         return respuesta.redirect("/");
       } else {
         peticion.session.administrador = administrador;
@@ -29,7 +29,7 @@ module.exports = {
         return respuesta.redirect("/menu-principal");
       }
     } else {
-      peticion.addFlash("mensaje", "Email o contrasena invalidos");
+      peticion.addFlash("mensajeLogin", "Email o contrasena invalidos");
       return respuesta.redirect("/");
     }
   },

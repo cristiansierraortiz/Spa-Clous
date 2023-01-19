@@ -43,3 +43,35 @@ $(document).ready(function () {
     },
   });
 });
+
+$(document).ready(function () {
+  $("#clientes").DataTable({
+    language: {
+      url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
+    },
+  });
+});
+
+$(document).ready(function () {
+  $("#historialClientes").DataTable({
+    language: {
+      url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
+    },
+  });
+});
+
+$(document).ready(function () {
+  $("#citas").DataTable({
+    language: {
+      url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
+    },
+  });
+});
+
+$(document).ready(function () {
+  $("#aromas").DataTable({
+    language: {
+      url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
+    },
+  });
+});

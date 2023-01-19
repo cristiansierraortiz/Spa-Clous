@@ -1,0 +1,76 @@
+<h6 class="titulo-pagina-menu">Citas</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="contenido">
+
+      <% flash.get('mensaje').forEach(function (msg) { %>
+        <div class="alert alert-success alert-dismissible fade show mt-5 mb-3" role="alert">
+          <p>
+            <i><span class="fa fa-circle-check"></span></i>
+            <%=msg%>
+          </p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% }) %>
+
+          <div class="acciones-datatable mt-5">
+            <a href="/crear-cita" class="btn btn-primary btn-sm"><span class="fa fa-calendar-plus"></span></a>
+          </div>
+          <div class="mt-4">
+            <table id="citas" class="display nowrap">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">nombre</th>
+                  <th scope="col">apellidos</th>
+                  <th scope="col">fecha_cita</th>
+                  <th scope="col">estado</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% citas.forEach( cita=> { %>
+                  <tr>
+                    <td>
+                      <%= cita.id %>
+                    </td>
+                    <td>
+                      <%= cita.cliente.nombres_cliente %>
+                    </td>
+                    <td>
+                      <% let apellidos %>
+                        <%= apellidos=cita.cliente.primer_apellido_cliente + " " + cita.cliente.segundo_apellido_cliente
+                          %>
+                    </td>
+                    <td>
+                      <% let fechaBD=new Date(cita.fecha_cita) %>
+                        <% let fecha=fechaBD.getDate() + "-" + (fechaBD.getMonth() + 1) + "-" + fechaBD.getFullYear() %>
+                          <%= fecha %>
+                    </td>
+                    <td>
+                      <span class="<%= cita.estado_cita ? " badge text-bg-success" : "badge text-bg-warning" %>">
+                        <%= cita.estado_cita ? "finalizada" : "pendiente" %>
+                      </span>
+                    </td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Opciones
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/completar-cita/<%=cita.id%>">completar</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>
+
+</div>

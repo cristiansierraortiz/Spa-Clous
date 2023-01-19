@@ -1,5 +1,5 @@
 /**
- * Administradores.js
+ * Terapias.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -11,21 +11,9 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: "number", autoIncrement: true, columnName: "id_admin" },
+    id: { type: "number", autoIncrement: true, columnName: "id_terapia" },
 
-    nombres_admin: { type: "string" },
-
-    primer_apellido_admin: { type: "string" },
-
-    segundo_apellido_admin: { type: "string" },
-
-    correo_admin: { type: "string" },
-
-    contrasena_admin: { type: "string" },
-
-    fecha_alta: { type: "string", columnType: "date" },
-
-    estado_admin: { type: "boolean" },
+    descripcion_terapia: { type: "string" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -34,5 +22,20 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
+    color: {
+      model: "colores",
+      columnName: "id_color_terapia",
+    },
+
+    aroma: {
+      model: "aromas",
+      columnName: "id_aroma_terapia",
+    },
+
+    genero: {
+      model: "generosmusicales",
+      columnName: "id_genero_musical_terapia",
+    },
   },
 };

@@ -1,31 +1,27 @@
 /**
- * Administradores.js
+ * EncuestaSatisfaccionClientes.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
+  tableName: "encuesta_satisfaccion_clientes",
+
   attributes: {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: "number", autoIncrement: true, columnName: "id_admin" },
+    id: { type: "number", autoIncrement: true, columnName: "id_encuesta" },
 
-    nombres_admin: { type: "string" },
+    calificacion_encuesta: { type: "string" },
 
-    primer_apellido_admin: { type: "string" },
+    resultado_aromaterapia: { type: "string" },
 
-    segundo_apellido_admin: { type: "string" },
+    resultado_musicoterapia: { type: "string" },
 
-    correo_admin: { type: "string" },
-
-    contrasena_admin: { type: "string" },
-
-    fecha_alta: { type: "string", columnType: "date" },
-
-    estado_admin: { type: "boolean" },
+    resultado_observaciones: { type: "string" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -34,5 +30,10 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
+    cliente: {
+      model: "clientes",
+      columnName: "cedula_encuesta_cliente",
+    },
   },
 };

@@ -12677,9 +12677,9 @@ CSS sidebar
 }
 
 #sidebar {
-  min-width: 270px;
-  max-width: 270px;
-  background: #5f5e5e;
+  min-width: 300px;
+  max-width: 300px;
+  background: #000;
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -12705,7 +12705,7 @@ CSS sidebar
 }
 
 #sidebar.active {
-  margin-left: -270px;
+  margin-left: -300px;
 }
 
 #sidebar h1 {
@@ -12722,7 +12722,7 @@ CSS sidebar
 
 #sidebar h1 .logo span {
   font-size: 18px;
-  color: #44bef1;
+  color: #b9aa61;
   display: block;
   text-decoration: none;
   margin-top: 5px;
@@ -12753,9 +12753,9 @@ CSS sidebar
 }
 
 #sidebar ul li a span {
-  color: #44bef1;
-  margin-right: 5px;
-  font-size: 19px;
+  color: #b9aa61;
+  margin-right: 20px;
+  font-size: 20px;
 }
 
 #sidebar ul li a:hover {
@@ -12802,12 +12802,13 @@ CSS sidebar
   font-size: 14px;
 }
 
-#sidebar .custom-menu .btn.btn-primary {
-  background: #5f5e5e;
-  border-color: #5f5e5e;
+#sidebar .custom-menu .btn.btn-info {
+  background: #000;
+  border-color: #000;
+  color: #fff;
 }
 
-#sidebar .custom-menu .btn.btn-primary:after {
+#sidebar .custom-menu .btn.btn-info:after {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -12818,12 +12819,12 @@ CSS sidebar
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  background: #5f5e5e;
+  background: #000;
   border-radius: 10px;
 }
 
-#sidebar .custom-menu .btn.btn-primary:hover,
-#sidebar .custom-menu .btn.btn-primary:focus {
+#sidebar .custom-menu .btn.btn-info:hover,
+#sidebar .custom-menu .btn.btn-info:focus {
   background: transparent !important;
   border-color: transparent !important;
 }
@@ -12834,26 +12835,17 @@ a[data-toggle="collapse"] {
 
 #content {
   width: 100%;
-  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 90px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-.btn.btn-primary {
-  background: #3445b4;
-  border-color: #3445b4;
-}
-
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
-  background: #3445b4 !important;
-  border-color: #3445b4 !important;
-}
-
 @media (min-width: 320px) and (max-width: 768px) {
   #sidebar {
-    margin-left: -270px;
+    margin-left: -300px;
   }
 
   #sidebar.active {
@@ -12883,7 +12875,7 @@ a[data-toggle="collapse"] {
 /* pagina administradores */
 
 .titulo-pagina-menu {
-  color: #44bef1;
+  color: #b9aa61;
   font-size: 20px;
   padding-left: 14px;
 }
@@ -12898,5 +12890,33 @@ a[data-toggle="collapse"] {
 }
 
 .dropdown .btn {
+  margin: 0;
+}
+
+.contenido {
+  width: 80%;
+  margin: 0;
+}
+
+.formulario {
+  width: 70%;
+  margin: 0;
+}
+
+.formulario .card {
+  padding: 40px;
+  border: #000 solid 0.5px;
+  border-radius: 10px;
+}
+
+.formulario h6 {
+  font-size: 30px;
+}
+
+.alert-danger p {
+  margin: 0;
+}
+
+.alert-success p {
   margin: 0;
 }

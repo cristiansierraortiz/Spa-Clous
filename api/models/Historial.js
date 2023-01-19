@@ -1,31 +1,27 @@
 /**
- * Administradores.js
+ * Historial.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
 module.exports = {
+  tableName: "historial_clientes",
+
   attributes: {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: "number", autoIncrement: true, columnName: "id_admin" },
+    id: { type: "number", autoIncrement: true, columnName: "id_historial" },
 
-    nombres_admin: { type: "string" },
+    saturacion_historial: { type: "number" },
 
-    primer_apellido_admin: { type: "string" },
+    frecuencia_cardiaca_historial: { type: "number" },
 
-    segundo_apellido_admin: { type: "string" },
+    presion_arterial_historial: { type: "number" },
 
-    correo_admin: { type: "string" },
-
-    contrasena_admin: { type: "string" },
-
-    fecha_alta: { type: "string", columnType: "date" },
-
-    estado_admin: { type: "boolean" },
+    fecha_historial: { type: "string", columnType: "date" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -34,5 +30,10 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
+    cliente: {
+      model: "clientes",
+      columnName: "id_cliente_historial",
+    },
   },
 };

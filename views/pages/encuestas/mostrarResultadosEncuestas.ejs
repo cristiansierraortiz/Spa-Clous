@@ -1,0 +1,51 @@
+<h6 class="titulo-pagina-menu">Resultados Encuestas</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="contenido">
+
+      <div class="mt-4">
+        <table id="citas" class="display nowrap">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">nombre</th>
+              <th scope="col">apellidos</th>
+              <th scope="col">calificacion</th>
+              <th scope="col">resultado_aromaterapia</th>
+              <th scope="col">resultado_musicoterapia</th>
+              <th scope="col">resultado_observaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <% citas.forEach( cita=> { %>
+                  <tr>
+                    <td>
+                      <%= cita.id %>
+                    </td>
+                    <td>
+                      <%= cita.cliente.nombres_cliente %>
+                    </td>
+                    <td>
+                      <% let apellidos %>
+                        <%= apellidos=cita.cliente.primer_apellido_cliente + " " + cita.cliente.segundo_apellido_cliente %>
+                    </td>
+                    <td>
+                      <% let fechaBD=new Date(cita.fecha_cita) %>
+                        <% let fecha=fechaBD.getDate() + "-" + (fechaBD.getMonth() + 1) + "-" + fechaBD.getFullYear() %>
+                          <%= fecha %>
+                    </td>
+                    <td>
+                      <span class="<%= cita.estado_cita ? " badge text-bg-success" : "badge text-bg-warning" %>">
+                        <%= cita.estado_cita ? "finalizada" : "pendiente" %>
+                      </span>
+                    </td>
+                  </tr>
+                  <% }) %> -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

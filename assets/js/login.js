@@ -1,7 +1,7 @@
-$( document ).ready(function() {
-  $("#sidebar li").on("click", function(){
-    $('.search.acvtive')
-    .removeClass('active')
-    .addClass('active')
+$(document).ready(function () {
+  var menus = $("#sidebar li");
+  menus.click(function () {
+    menus.removeClass("active");
+    $(this).addClass("active");
   });
 });

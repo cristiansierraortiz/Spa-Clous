@@ -1,5 +1,5 @@
 /**
- * Administradores.js
+ * Clientes.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -11,21 +11,25 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: "number", autoIncrement: true, columnName: "id_admin" },
+    id: { type: "number", autoIncrement: true, columnName: "id_cliente" },
 
-    nombres_admin: { type: "string" },
+    cedula_cliente: { type: "string" },
 
-    primer_apellido_admin: { type: "string" },
+    nombres_cliente: { type: "string" },
 
-    segundo_apellido_admin: { type: "string" },
+    primer_apellido_cliente: { type: "string" },
 
-    correo_admin: { type: "string" },
+    segundo_apellido_cliente: { type: "string" },
 
-    contrasena_admin: { type: "string" },
+    sexo_cliente: { type: "string", columnType: "char" },
 
-    fecha_alta: { type: "string", columnType: "date" },
+    direccion_cliente: { type: "string" },
 
-    estado_admin: { type: "boolean" },
+    contacto_cliente: { type: "string" },
+
+    correo_cliente: { type: "string" },
+
+    edad_cliente: { type: "number" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗

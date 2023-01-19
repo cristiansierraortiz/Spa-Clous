@@ -7,12 +7,11 @@
 
 module.exports = {
   citas: async (peticion, respuesta) => {
-    if (peticion.session && peticion.session.administrador){
-      respuesta.view("pages/citas");
+    if (peticion.session && peticion.session.administrador) {
+      let citas = await Citas.find().populate("cliente");
+      respuesta.view("pages/citas/mostrarCitas", { citas });
     } else {
       return respuesta.redirect("/");
     }
   },
-
 };
-

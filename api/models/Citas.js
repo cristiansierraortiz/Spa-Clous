@@ -1,5 +1,5 @@
 /**
- * Administradores.js
+ * Citas.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -11,21 +11,11 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: "number", autoIncrement: true, columnName: "id_admin" },
+    id: { type: "number", autoIncrement: true, columnName: "id_cita" },
 
-    nombres_admin: { type: "string" },
+    fecha_cita: { type: "string", columnType: "date" },
 
-    primer_apellido_admin: { type: "string" },
-
-    segundo_apellido_admin: { type: "string" },
-
-    correo_admin: { type: "string" },
-
-    contrasena_admin: { type: "string" },
-
-    fecha_alta: { type: "string", columnType: "date" },
-
-    estado_admin: { type: "boolean" },
+    estado_cita: { type: "boolean" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -34,5 +24,10 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+
+    cliente: {
+      model: "clientes",
+      columnName: "id_cliente_cita",
+    },
   },
 };

@@ -1,0 +1,59 @@
+<h6 class="titulo-pagina-menu">Clientes</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="contenido">
+
+      <nav class="mt-4 mb-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/clientes">Clientes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Historial <%=historiales[0].cliente.nombres_cliente%>
+              <%=historiales[0].cliente.primer_apellido_cliente%>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="mt-4">
+        <table id="historialClientes" class="display nowrap">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">cliente</th>
+              <th scope="col">saturacion(SO2)</th>
+              <th scope="col">frecuencia_cardiaca(BPM)</th>
+              <th scope="col">presion_arterial(Pa)</th>
+              <th scope="col">fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% historiales.forEach( historial=> { %>
+              <tr>
+                <td>
+                  <%= historial.id %>
+                </td>
+                <td>
+                  <%= historial.cliente.nombres_cliente %>
+                </td>
+                <td>
+                  <%= historial.saturacion_historial %>
+                </td>
+                <td>
+                  <%= historial.frecuencia_cardiaca_historial%>
+                </td>
+                <td>
+                  <%= historial.presion_arterial_historial%>
+                </td>
+                <td>
+                  <% let fechaBD=new Date(historial.fecha_historial) %>
+                    <% let fecha=fechaBD.getDate() + "-" + (fechaBD.getMonth() + 1) + "-" + fechaBD.getFullYear() %>
+                      <%= fecha %>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

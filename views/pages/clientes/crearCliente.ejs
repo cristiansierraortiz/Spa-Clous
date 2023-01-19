@@ -1,0 +1,88 @@
+<h6 class="titulo-pagina-menu">Clientes</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="formulario">
+      <nav class="mt-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/clientes">Clientes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Crear</li>
+        </ol>
+      </nav>
+
+      <div class="card mt-5">
+        <div class="mb-4">
+          <h6>Crear Cliente</h6>
+        </div>
+        <% flash.get('mensaje').forEach(function (msg) { %>
+          <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            <p>
+              <i><span class="fa fa-circle-xmark"></span></i>
+              <%=msg%>
+            </p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <% }) %>
+            <div class="card-body">
+              <form class="row g-4" id="formulario-admin" method="post" action="/procesar-crear-cliente">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="cedulaCliente" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" id="cedulaCliente" name="cedulaCliente" placeholder="cedula"
+                      autocomplete="off">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="nombreCliente" class="form-label">Nombres</label>
+                    <input type="text" class="form-control" id="nombreCliente" name="nombreCliente"
+                      placeholder="nombres completos" autocomplete="off">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="apellido1Cliente" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control" id="apellido1Cliente" name="apellido1Cliente"
+                      placeholder="primer apellido" autocomplete="off">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="apellido2Cliente" class="form-label">Segundo Apellidos</label>
+                    <input type="text" class="form-control" id="apellido2Cliente" name="apellido2Cliente"
+                      placeholder="segundo apellido" autocomplete="off">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="sexoCliente" class="form-label">Sexo Cliente</label>
+                    <select class="form-select" id="sexoCliente" name="sexoCliente" autocomplete="off">
+                      <option selected disabled value="">seleccione un sexo</option>
+                      <option>Masculino</option>
+                      <option>Femenino</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="direccionCliente" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" id="direccionCliente" name="direccionCliente"
+                      aria-describedby="direccionCliente" autocomplete="off" placeholder="calle 00 #00 - 00">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="contactoCliente" class="form-label">Contacto</label>
+                    <input type="text" class="form-control" id="contactoCliente" name="contactoCliente"
+                      aria-describedby="contactoCliente" autocomplete="off" placeholder="000 0000 0000">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="correoCliente" class="form-label">Correo</label>
+                    <input type="email" class="form-control" id="correoCliente" name="correoCliente"
+                      aria-describedby="correoCliente" autocomplete="off" placeholder="correo@dominio.com">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="edadCliente" class="form-label">Edad</label>
+                    <input type="text" class="form-control" id="edadCliente" name="edadCliente" autocomplete="off"
+                      placeholder="edad">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="d-grid gap-2 mt-4">
+                    <button class="btn btn-outline-primary" type="submit">Crear Cliente</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>

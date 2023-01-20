@@ -8,7 +8,8 @@
 module.exports = {
   musicoterapia: async (peticion, respuesta) => {
     if (peticion.session && peticion.session.administrador){
-      respuesta.view("pages/musicoterapia");
+      let generos = await GenerosMusicales.find();
+      respuesta.view("pages/musicoterapia/mostrarMusicoterapia", { generos });
     } else {
       return respuesta.redirect("/");
     }

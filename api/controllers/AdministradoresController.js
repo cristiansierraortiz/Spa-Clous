@@ -46,12 +46,12 @@ module.exports = {
     let estadoAdministrador;
 
     if (
-      nombres.length === 0 ||
-      apellido1.length === 0 ||
-      apellido2.length === 0 ||
-      correo.length === 0 ||
-      contrasena.length === 0 ||
-      estado.length === 0
+      nombres.length == 0 ||
+      apellido1.length == 0 ||
+      apellido2.length == 0 ||
+      correo.length == 0 ||
+      contrasena.length == 0 ||
+      estado == undefined
     ) {
       peticion.addFlash("mensaje", "Complete todos los campos para continuar");
       return respuesta.redirect("/crear-administrador");
@@ -64,9 +64,9 @@ module.exports = {
         peticion.addFlash("mensaje", "Email duplicado");
         return respuesta.redirect("/agregar-administrador");
       } else {
-        if (estado === "Activo") {
+        if (estado == 1) {
           estadoAdministrador = true;
-        } else if (estado === "Inactivo") {
+        } else if (estado == 2) {
           estadoAdministrador = false;
         }
         await Administradores.create({
@@ -105,13 +105,13 @@ module.exports = {
     let estado = datosAdministrador.estadoAdministrador;
     let estadoAdministrador;
 
-    if (nombres.length === 0 || estado.length === 0) {
+    if (nombres.length == 0 || estado == undefined) {
       peticion.addFlash("mensaje", "Complete todos los campos para continuar");
       return respuesta.redirect("/editar-administrador/" + idAdmin);
     } else {
-      if (estado === "Activo") {
+      if (estado == 1) {
         estadoAdministrador = true;
-      } else if (estado === "Inactivo") {
+      } else if (estado == 2) {
         estadoAdministrador = false;
       }
       await Administradores.update(

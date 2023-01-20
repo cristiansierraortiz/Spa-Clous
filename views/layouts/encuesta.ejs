@@ -21,61 +21,86 @@
 
   <div class="container">
     <div id="contenedor-preguntas">
-      <div class="input-group mb-4">
-        <img src="../images/bg_login.jpg" alt="logo">
-        <h6>Encuesta de Satisfacción</h6>
-      </div>
-      <form action="/procesar-encuesta" method="post">
-        <div class="mb-3">
-          <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Ingrese su número de cédula"
-            autofocus required></input>
-        </div>
-        <div class="mb-2">
-          <label class="form-label">¿Qué tan satisfecho estas con la experiencia vivida en la terapia?</label>
-        </div>
-        <div class="mb-3 radio">
-          <input type="radio" class="btn-check" name="radio" id="radio1" value="1" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio1">1</label>
-          <input type="radio" class="btn-check" name="radio" id="radio2" value="2" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio2">2</label>
-          <input type="radio" class="btn-check" name="radio" id="radio3" value="3" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio3">3</label>
-          <input type="radio" class="btn-check" name="radio" id="radio4" value="4" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio4">4</label>
-          <input type="radio" class="btn-check" name="radio" id="radio5" value="5" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio5">5</label>
-          <input type="radio" class="btn-check" name="radio" id="radio6" value="6" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio6">6</label>
-          <input type="radio" class="btn-check" name="radio" id="radio7" value="7" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio7">7</label>
-          <input type="radio" class="btn-check" name="radio" id="radio8" value="8" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio8">8</label>
-          <input type="radio" class="btn-check" name="radio" id="radio9" value="9" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio9">9</label>
-          <input type="radio" class="btn-check" name="radio" id="radio10" value="10" autocomplete="off" required>
-          <label class="btn btn-outline-primary" for="radio10">10</label>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">¿Mencione el nombre de un aroma que le gustaría disfrutar en la próxima
-            terapia?</label>
-          <textarea class="form-control" id="aromaterapia" name="aromaterapia" placeholder="Esciba aquí..."
-            required></textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">¿Mencione el nombre de un género musical que le gustaría disfrutar en la próxima
-            terapia?</label>
-          <textarea class="form-control" id="musicoterapia" name="musicoterapia" placeholder="Esciba aquí..."
-            required></textarea>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Observaciones</label>
-          <textarea class="form-control" id="observacion" name="observacion" placeholder="Esciba aquí..."
-            required></textarea>
-        </div>
-        <div class="d-grid gap-2 mt-4 mb-3">
-          <button type="submit" class="btn btn-outline-primary">Finalizar</button>
-        </div>
-      </form>
+          <div class="input-group mb-4">
+            <img src="../images/bg_login.jpg" alt="logo">
+            <h6>Encuesta de Satisfacción</h6>
+          </div>
+
+          <div class="mb-3">
+            <% flash.get('mensaje').forEach(function (msg) { %>
+              <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <p>
+                  <i><span class="fa fa-circle-xmark"></span></i>
+                  <%=msg%>
+                </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <% }) %>
+          </div>
+
+          <div class="mb-3">
+            <% flash.get('mensajeExitoso').forEach(function (msg) { %>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <p>
+                  <i><span class="fa fa-circle-check"></span></i>
+                  <%=msg%>
+                </p>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              <% }) %>
+          </div>
+
+          <form action="/procesar-encuesta-cliente" method="post">
+            <div class="mb-3">
+              <input type="text" class="form-control" id="cedulaCliente" name="cedulaCliente"
+                placeholder="Ingrese su número de cédula" autofocus></input>
+            </div>
+            <div class="mb-2">
+              <label class="form-label">¿Qué tan satisfecho estas con la experiencia vivida en la terapia?</label>
+            </div>
+            <div class="mb-3 radio">
+              <input type="radio" class="btn-check" name="calificacion" id="radio1" value="1" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio1">1</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio2" value="2" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio2">2</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio3" value="3" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio3">3</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio4" value="4" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio4">4</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio5" value="5" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio5">5</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio6" value="6" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio6">6</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio7" value="7" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio7">7</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio8" value="8" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio8">8</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio9" value="9" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio9">9</label>
+              <input type="radio" class="btn-check" name="calificacion" id="radio10" value="10" autocomplete="off">
+              <label class="btn btn-outline-primary" for="radio10">10</label>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">¿Mencione el nombre de un aroma que le gustaría disfrutar en la próxima
+                terapia?</label>
+              <textarea class="form-control" id="aromaterapia" name="aromaterapia"
+                placeholder="Esciba aquí..."></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">¿Mencione el nombre de un género musical que le gustaría disfrutar en la próxima
+                terapia?</label>
+              <textarea class="form-control" id="musicoterapia" name="musicoterapia"
+                placeholder="Esciba aquí..."></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Observaciones</label>
+              <textarea class="form-control" id="observacion" name="observacion"
+                placeholder="Esciba aquí..."></textarea>
+            </div>
+            <div class="d-grid gap-2 mt-4 mb-3">
+              <button type="submit" class="btn btn-outline-primary">Finalizar</button>
+            </div>
+          </form>
     </div>
   </div>
 

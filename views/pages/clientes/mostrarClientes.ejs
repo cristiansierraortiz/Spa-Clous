@@ -14,6 +14,16 @@
         </div>
         <% }) %>
 
+        <% flash.get('mensajeInformativo').forEach(function (msg) { %>
+          <div class="alert alert-primary alert-dismissible fade show mt-5 mb-3" role="alert">
+            <p>
+              <i><span class="fa fa-circle-info"></span></i>
+              <%=msg%>
+            </p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <% }) %>
+
           <div class="acciones-datatable mt-5">
             <a href="/crear-cliente" class="btn btn-primary btn-sm"><span class="fa fa-user-plus"></span></a>
           </div>
@@ -68,6 +78,7 @@
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="/historial-cliente/<%=cliente.id%>">historial</a></li>
+                          <li><a class="dropdown-item" href="/resultados-encuestas-cliente/<%=cliente.id%>">encuestas</a></li>
                           <li><a class="dropdown-item" href="/editar-cliente/<%=cliente.id%>">editar</a>
                           </li>
                           <li><a class="dropdown-item" href="/eliminar-cliente/<%=cliente.id%>">eliminar</a>

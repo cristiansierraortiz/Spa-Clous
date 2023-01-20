@@ -1,1 +1,63 @@
 <h6 class="titulo-pagina-menu">Aromaterapia</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="contenido">
+
+      <% flash.get('mensaje').forEach(function (msg) { %>
+        <div class="alert alert-success alert-dismissible fade show mt-5 mb-3" role="alert">
+          <p>
+            <i><span class="fa fa-circle-check"></span></i>
+            <%=msg%>
+          </p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% }) %>
+
+          <div class="acciones-datatable mt-5">
+            <a href="/crear-aroma" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span></a>
+          </div>
+          <div class="mt-4">
+            <table id="aromas" class="display nowrap">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">nombre</th>
+                  <th scope="col">descripción</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% aromas.forEach( aroma=> { %>
+                  <tr>
+                    <td>
+                      <%= aroma.id %>
+                    </td>
+                    <td>
+                      <%= aroma.nombre_aroma %>
+                    </td>
+                    <td>
+                      <%= aroma.descripcion_aroma %>
+                    </td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Opciones
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/editar-aroma/<%=aroma.id%>">editar</a>
+                          <li><a class="dropdown-item" href="/eliminar-aroma/<%=aroma.id%>">eliminar</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>
+
+</div>

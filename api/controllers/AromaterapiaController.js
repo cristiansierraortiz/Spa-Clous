@@ -8,7 +8,8 @@
 module.exports = {
   aromaterapia: async (peticion, respuesta) => {
     if (peticion.session && peticion.session.administrador){
-      respuesta.view("pages/aromaterapia");
+      let aromas = await Aromas.find();
+      respuesta.view("pages/aromaterapia/mostrarAromaterapia", { aromas });
     } else {
       return respuesta.redirect("/");
     }

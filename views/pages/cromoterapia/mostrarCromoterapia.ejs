@@ -15,29 +15,29 @@
         <% }) %>
 
           <div class="acciones-datatable mt-5">
-            <a href="/crear-aroma" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span></a>
+            <a href="/crear-color" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span></a>
           </div>
           <div class="mt-4">
-            <table id="aromas" class="display nowrap">
+            <table id="colores" class="display nowrap">
               <thead>
                 <tr>
                   <th scope="col">id</th>
                   <th scope="col">nombre</th>
-                  <th scope="col">descripción</th>
+                  <th scope="col">efecto</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
-                <% aromas.forEach( aroma=> { %>
+                <% colores.forEach( color => { %>
                   <tr>
                     <td>
-                      <%= aroma.id %>
+                      <%= color.id %>
                     </td>
                     <td>
-                      <%= aroma.nombre_aroma %>
+                      <%= color.nombre_color %>
                     </td>
                     <td>
-                      <%= aroma.descripcion_aroma %>
+                      <%= color.efecto_color %>
                     </td>
                     <td>
                       <div class="dropdown">
@@ -46,8 +46,8 @@
                           Opciones
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="/editar-aroma/<%=aroma.id%>">editar</a>
-                          <li><a class="dropdown-item" href="/eliminar-aroma/<%=aroma.id%>">eliminar</a>
+                          <li><a class="dropdown-item" href="/editar-color/<%=color.id%>">editar</a>
+                          <li><a class="dropdown-item" href="/eliminar-color/<%=color.id%>">eliminar</a>
                           </li>
                         </ul>
                       </div>

@@ -37,14 +37,14 @@ module.exports = {
     let sexoCliente;
 
     if (
-      cedula.length === 0 ||
-      nombres.length === 0 ||
-      apellido1.length === 0 ||
-      apellido2.length === 0 ||
-      direccion.length === 0 ||
-      contacto.length === 0 ||
-      correo.length === 0 ||
-      edad.length === 0
+      cedula.length == 0 ||
+      nombres.length == 0 ||
+      apellido1.length == 0 ||
+      apellido2.length == 0 ||
+      direccion.length == 0 ||
+      contacto.length == 0 ||
+      correo.length == 0 ||
+      edad.length == 0
     ) {
       peticion.addFlash("mensaje", "Complete todos los campos para continuar");
       return respuesta.redirect("/crear-cliente");
@@ -57,9 +57,9 @@ module.exports = {
         peticion.addFlash("mensaje", "Email duplicado");
         return respuesta.redirect("/agregar-cliente");
       } else {
-        if (sexo === "Masculino") {
+        if (sexo == "Masculino") {
           sexoCliente = "M";
-        } else if (sexo === "Femenino") {
+        } else if (sexo == "Femenino") {
           sexoCliente = "F";
         }
 
@@ -103,10 +103,10 @@ module.exports = {
     let edad = datosCliente.edadCliente;
 
     if (
-      direccion.length === 0 ||
-      contacto.length === 0 ||
-      correo.length === 0 ||
-      edad.length === 0
+      direccion.length == 0 ||
+      contacto.length == 0 ||
+      correo.length == 0 ||
+      edad.length == 0
     ) {
       peticion.addFlash("mensaje", "Complete todos los campos para continuar");
       return respuesta.redirect("/editar-cliente/" + idCliente);
@@ -148,7 +148,31 @@ module.exports = {
       let historiales = await Historial.find({
         cliente: idCliente,
       }).populate("cliente");
-      respuesta.view("pages/clientes/historialCliente", { historiales });
+      if (historiales.length == 0) {
+        peticion.addFlash("mensajeInformativo", "Cliente sin historial");
+        respuesta.redirect("/clientes");
+      } else {
+        respuesta.view("pages/clientes/historialCliente", { historiales });
+      }
+    } else {
+      return respuesta.redirect("/");
+    }
+  },
+
+  encuestasCliente: async (peticion, respuesta) => {
+    if (peticion.session && peticion.session.administrador) {
+      let idCliente = peticion.params.clienteId;
+      let encuestas = await EncuestaSatisfaccionClientes.find({
+        cliente: idCliente,
+      }).populate("cliente");
+      if (encuestas.length == 0) {
+        peticion.addFlash("mensajeInformativo", "Cliente sin encuestas");
+        respuesta.redirect("/clientes");
+      } else {
+        respuesta.view("pages/clientes/mostrarResultadosEncuestas", {
+          encuestas,
+        });
+      }
     } else {
       return respuesta.redirect("/");
     }

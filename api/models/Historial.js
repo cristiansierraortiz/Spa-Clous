@@ -31,9 +31,6 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    cliente: {
-      model: "clientes",
-      columnName: "id_cliente_historial",
-    },
+    cliente: { model: "clientes", columnName: 'id_cliente_historial' },
   },
 };

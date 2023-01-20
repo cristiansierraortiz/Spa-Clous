@@ -51,6 +51,10 @@
     height: 100px;
 }
 
+#contenedor-preguntas .alert p {
+    margin: 0;
+}
+
 @media (min-width: 320px) and (max-width: 425px) {
     #contenedor-preguntas {
         padding-left: 40px;

@@ -13,7 +13,7 @@ module.exports = {
 
     id: { type: "number", autoIncrement: true, columnName: "id_cliente" },
 
-    cedula_cliente: { type: "string" },
+    cedula_cliente: { type: "string", columnType: "numeric" },
 
     nombres_cliente: { type: "string" },
 
@@ -25,7 +25,7 @@ module.exports = {
 
     direccion_cliente: { type: "string" },
 
-    contacto_cliente: { type: "string" },
+    contacto_cliente: { type: "string", columnType: "numeric" },
 
     correo_cliente: { type: "string" },
 

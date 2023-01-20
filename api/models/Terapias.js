@@ -23,19 +23,10 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    color: {
-      model: "colores",
-      columnName: "id_color_terapia",
-    },
+    color: { model: "colores", columnName: 'id_color_terapia' },
 
-    aroma: {
-      model: "aromas",
-      columnName: "id_aroma_terapia",
-    },
+    aroma: { model: "aromas", columnName: 'id_aroma_terapia' },
 
-    genero: {
-      model: "generosmusicales",
-      columnName: "id_genero_musical_terapia",
-    },
+    genero: { model: "generosmusicales", columnName: 'id_genero_musical_terapia' },
   },
 };

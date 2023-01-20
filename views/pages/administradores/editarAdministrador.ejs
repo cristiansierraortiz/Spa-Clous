@@ -57,9 +57,9 @@
                   <div class="col-md-6 mb-3">
                     <label for="estadoAdministrador" class="form-label">Estado Administrador</label>
                     <select class="form-select" id="estadoAdministrador" name="estadoAdministrador" autocomplete="off">
-                      <option selected disabled value="">seleccione un estado</option>
-                      <option <%=administrador[0].estado_admin ? 'selected' : '' %>>Activo</option>
-                      <option <%=administrador[0].estado_admin ? '' : 'selected' %>>Inactivo</option>
+                      <option selected disabled value="0">seleccione un estado</option>
+                      <option value="1" <%=administrador[0].estado_admin ? 'selected' : '' %>>Activo</option>
+                      <option value="2" <%=administrador[0].estado_admin ? '' : 'selected' %>>Inactivo</option>
                     </select>
                   </div>
                 </div>

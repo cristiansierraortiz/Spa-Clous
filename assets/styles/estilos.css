@@ -12915,8 +12915,15 @@ a[data-toggle="collapse"] {
 
 .alert-danger p {
   margin: 0;
+  text-align: center;
 }
 
 .alert-success p {
   margin: 0;
+  text-align: center;
+}
+
+.alert-primary p {
+  margin: 0;
+  text-align: center;
 }

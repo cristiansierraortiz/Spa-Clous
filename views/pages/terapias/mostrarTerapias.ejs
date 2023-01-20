@@ -1,1 +1,71 @@
 <h6 class="titulo-pagina-menu">Terapias</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="contenido">
+
+      <% flash.get('mensaje').forEach(function (msg) { %>
+        <div class="alert alert-success alert-dismissible fade show mt-5 mb-3" role="alert">
+          <p>
+            <i><span class="fa fa-circle-check"></span></i>
+            <%=msg%>
+          </p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <% }) %>
+
+          <div class="acciones-datatable mt-5">
+            <a href="/crear-terapia" class="btn btn-primary btn-sm"><span class="fa fa-plus"></span></a>
+          </div>
+          <div class="mt-4">
+            <table id="terapias" class="display nowrap">
+              <thead>
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">descripción</th>
+                  <th scope="col">color</th>
+                  <th scope="col">aroma</th>
+                  <th scope="col">genero_musical</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% terapias.forEach( terapia=> { %>
+                  <tr>
+                    <td>
+                      <%= terapia.id %>
+                    </td>
+                    <td>
+                      <%= terapia.descripcion_terapia %>
+                    </td>
+                    <td>
+                      <%= terapia.color.nombre_color %>
+                    </td>
+                    <td>
+                      <%= terapia.aroma.nombre_aroma %>
+                    </td>
+                    <td>
+                      <%= terapia.genero.nombre_genero_musical %>
+                    </td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
+                          Opciones
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/editar-terapia/<%=terapia.id%>">editar</a>
+                          <li><a class="dropdown-item" href="/eliminar-terapia/<%=terapia.id%>">eliminar</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                  <% }) %>
+              </tbody>
+            </table>
+          </div>
+    </div>
+  </div>
+
+</div>

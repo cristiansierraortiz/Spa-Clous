@@ -1,0 +1,59 @@
+<h6 class="titulo-pagina-menu">Resultados Encuestas</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="contenido">
+      <nav class="mt-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/clientes">Clientes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Resultados Encuestas
+            <%=encuestas[0].cliente.nombres_cliente%>
+              <%=encuestas[0].cliente.primer_apellido_cliente%>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="mt-5">
+        <table id="encuestas" class="display nowrap">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">calificacion</th>
+              <th scope="col">resultado_aromaterapia</th>
+              <th scope="col">resultado_musicoterapia</th>
+              <th scope="col">resultado_observaciones</th>
+              <th scope="col">fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% encuestas.forEach( encuesta=> { %>
+              <tr>
+                <td>
+                  <%= encuesta.id %>
+                </td>
+                <td>
+                  <%= encuesta.calificacion_encuesta %>
+                </td>
+                <td>
+                  <%= encuesta.resultado_aromaterapia %>
+                </td>
+                <td>
+                  <%= encuesta.resultado_musicoterapia %>
+                </td>
+                <td>
+                  <%= encuesta.resultado_observaciones %>
+                </td>
+                <td>
+                  <% let fechaBD=new Date(encuesta.fecha_encuesta) %>
+                    <% let fecha=fechaBD.getDate() + "-" + (fechaBD.getMonth() + 1) + "-" + fechaBD.getFullYear() %>
+                      <%= fecha %>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

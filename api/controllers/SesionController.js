@@ -36,18 +36,10 @@ module.exports = {
           administrador.nombres_admin.toUpperCase() +
           " " +
           administrador.primer_apellido_admin.toUpperCase();
-        return respuesta.redirect("/menu-principal");
+        return respuesta.redirect("/administradores");
       }
     } else {
       peticion.addFlash("mensajeLogin", "Email o contrasena invalidos");
-      return respuesta.redirect("/");
-    }
-  },
-
-  menuPrincipal: async (peticion, respuesta) => {
-    if (peticion.session && peticion.session.administrador) {
-      respuesta.view("pages/dashboard");
-    } else {
       return respuesta.redirect("/");
     }
   },
@@ -86,7 +78,7 @@ module.exports = {
         );
         return respuesta.redirect("/encuesta");
       } else {
-        idCliente = cliente.id
+        idCliente = cliente.id;
         await EncuestaSatisfaccionClientes.create({
           cliente: idCliente,
           calificacion_encuesta: calificacion,

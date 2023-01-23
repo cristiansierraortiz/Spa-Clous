@@ -6,7 +6,6 @@
  */
 
 module.exports = {
-
   tableName: "generos_musicales",
 
   attributes: {
@@ -14,7 +13,11 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    id: { type: "number", autoIncrement: true, columnName: "id_genero_musical" },
+    id: {
+      type: "number",
+      autoIncrement: true,
+      columnName: "id_genero_musical",
+    },
 
     nombre_genero_musical: { type: "string" },
 
@@ -27,6 +30,5 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-
   },
 };

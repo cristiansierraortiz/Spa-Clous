@@ -135,9 +135,9 @@ module.exports = {
       await Administradores.destroyOne({ id: idAdmin });
       peticion.addFlash(
         "mensaje",
-        "Administrador " +
+        'Administrador "' +
           administrador.nombres_admin +
-          " eliminado correctamente"
+          '" eliminado correctamente'
       );
       return respuesta.redirect("/administradores");
     } else {

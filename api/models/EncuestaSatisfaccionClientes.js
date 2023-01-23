@@ -23,7 +23,7 @@ module.exports = {
 
     resultado_observaciones: { type: "string" },
 
-    fecha_encuesta: { type: "string", columnType: 'date' },
+    fecha_encuesta: { type: "string", columnType: "date" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -33,6 +33,6 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    cliente: { model: 'clientes', columnName: 'id_encuesta_cliente' },
+    cliente: { model: "clientes", columnName: "id_encuesta_cliente" },
   },
 };

@@ -28,7 +28,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% colores.forEach( color => { %>
+                <% colores.forEach( color=> { %>
                   <tr>
                     <td>
                       <%= color.id %>
@@ -47,7 +47,6 @@
                         </a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="/editar-color/<%=color.id%>">editar</a>
-                          <li><a class="dropdown-item" href="/eliminar-color/<%=color.id%>">eliminar</a>
                           </li>
                         </ul>
                       </div>

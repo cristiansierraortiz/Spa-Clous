@@ -26,11 +26,7 @@ module.exports.routes = {
 
   "POST /procesar-encuesta-cliente": "SesionController.procesarEncuesta",
 
-  "GET /menu-principal": "SesionController.menuPrincipal",
-
   "GET /cerrar-sesion": "SesionController.cerrarSesion",
-
-  "GET /dashboard": "DashboardController.dashboard",
 
   "GET /administradores": "AdministradoresController.administradores",
 
@@ -104,9 +100,6 @@ module.exports.routes = {
 
   "POST /procesar-editar-color": "CromoterapiaController.procesarEditarColor",
 
-  "GET /eliminar-color/:colorId":
-    "CromoterapiaController.procesarEliminarColor",
-
   // acciones Aromaterapia
 
   "GET /crear-aroma": "AromaterapiaController.crearAroma",
@@ -117,35 +110,31 @@ module.exports.routes = {
 
   "POST /procesar-editar-aroma": "AromaterapiaController.procesarEditarAroma",
 
-  "GET /eliminar-aroma/:aromaId":
-    "AromaterapiaController.procesarEliminarAroma",
-
   // acciones Musicoterapia
 
-  "GET /crear-genero": "MusicoterapiaController.crearGenero",
+  "GET /crear-genero-musical": "MusicoterapiaController.crearGenero",
 
-  "POST /procesar-crear-genero": "MusicoterapiaController.procesarCrearGenero",
+  "POST /procesar-crear-genero-musical":
+    "MusicoterapiaController.procesarCrearGenero",
 
-  "GET /editar-genero/:generoId": "MusicoterapiaController.editarGenero",
+  "GET /editar-genero-musical/:generoId":
+    "MusicoterapiaController.editarGenero",
 
-  "POST /procesar-editar-genero":
+  "POST /procesar-editar-genero-musical":
     "MusicoterapiaController.procesarEditarGenero",
-
-  "GET /eliminar-genero/:generoId":
-    "MusicoterapiaController.procesarEliminarGenero",
 
   // acciones Terapia
 
-  "GET /crear-terapia": "TerapiaController.crearTerapia",
+  "GET /crear-terapia": "TerapiasController.crearTerapia",
 
-  "POST /procesar-crear-terapia": "TerapiaController.procesarCrearTerapia",
+  "POST /procesar-crear-terapia": "TerapiasController.procesarCrearTerapia",
 
-  "GET /editar-terapia/:terapiaId": "TerapiaController.editarTerapia",
+  "GET /editar-terapia/:terapiaId": "TerapiasController.editarTerapia",
 
-  "POST /procesar-editar-terapia": "TerapiaController.procesarEditarTerapia",
+  "POST /procesar-editar-terapia": "TerapiasController.procesarEditarTerapia",
 
   "GET /eliminar-terapia/:terapiaId":
-    "TerapiaController.procesarEliminarTerapia",
+    "TerapiasController.procesarEliminarTerapia",
 
   /***************************************************************************
    *                                                                          *

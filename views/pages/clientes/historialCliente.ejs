@@ -20,7 +20,6 @@
               <th scope="col">id</th>
               <th scope="col">saturacion(SO2)</th>
               <th scope="col">frecuencia_cardiaca(BPM)</th>
-              <th scope="col">presion_arterial(Pa)</th>
               <th scope="col">fecha</th>
             </tr>
           </thead>
@@ -35,9 +34,6 @@
                 </td>
                 <td>
                   <%= historial.frecuencia_cardiaca_historial%>
-                </td>
-                <td>
-                  <%= historial.presion_arterial_historial%>
                 </td>
                 <td>
                   <% let fechaBD=new Date(historial.fecha_historial) %>

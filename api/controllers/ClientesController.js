@@ -74,7 +74,7 @@ module.exports = {
           correo_cliente: correo,
           edad_cliente: edad,
         });
-        peticion.addFlash("mensaje", "Cliente agregado correctamente");
+        peticion.addFlash("mensaje", "Cliente creado correctamente");
         return respuesta.redirect("/clientes");
       }
     }
@@ -134,7 +134,7 @@ module.exports = {
       await Clientes.destroyOne({ id: idCliente });
       peticion.addFlash(
         "mensaje",
-        "Cliente " + cliente.nombres_cliente + " eliminado correctamente"
+        'Cliente "' + cliente.nombres_cliente + '" eliminado correctamente'
       );
       return respuesta.redirect("/clientes");
     } else {

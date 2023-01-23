@@ -25,51 +25,47 @@
           <% }) %>
             <div class="card-body">
               <form class="row g-4" id="formulario-admin" method="post" action="/procesar-editar-administrador">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="idAdministrador" class="form-label">Id</label>
-                    <input type="text" class="form-control" id="idAdministrador" name="idAdministrador"
-                      value="<%=administrador[0].id%>" autocomplete="off" readonly>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="nombreAdministrador" class="form-label">Nombres</label>
-                    <input type="text" class="form-control" id="nombreAdministrador" name="nombreAdministrador"
-                      value="<%=administrador[0].nombres_admin%>" placeholder="nombres completos" autocomplete="off">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="apellido1Administrador" class="form-label">Primer Apellido</label>
-                    <input type="text" class="form-control" id="apellido1Administrador" name="apellido1Administrador"
-                      value="<%=administrador[0].primer_apellido_admin%>" placeholder="primer apellido"
-                      autocomplete="off" disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="apellido2Administrador" class="form-label">Segundo Apellidos</label>
-                    <input type="text" class="form-control" id="apellido2Administrador" name="apellido2Administrador"
-                      value="<%=administrador[0].segundo_apellido_admin%>" placeholder="segundo apellido"
-                      autocomplete="off" disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="correoAdministrador" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="correoAdministrador" name="correoAdministrador"
-                      aria-describedby="correoAdministrador" autocomplete="off"
-                      value="<%=administrador[0].correo_admin%>" placeholder="correo@dominio.com" disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="estadoAdministrador" class="form-label">Estado Administrador</label>
-                    <select class="form-select" id="estadoAdministrador" name="estadoAdministrador" autocomplete="off">
-                      <option selected disabled value="0">seleccione un estado</option>
-                      <option value="1" <%=administrador[0].estado_admin ? 'selected' : '' %>>Activo</option>
-                      <option value="2" <%=administrador[0].estado_admin ? '' : 'selected' %>>Inactivo</option>
-                    </select>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="idAdministrador" class="form-label">Id</label>
+                  <input type="text" class="form-control" id="idAdministrador" name="idAdministrador"
+                    value="<%=administrador[0].id%>" autocomplete="off" readonly>
                 </div>
-                <div class="row">
-                  <div class="d-grid gap-2 mt-4">
-                    <button class="btn btn-outline-primary" type="submit">Editar Administrador</button>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="nombreAdministrador" class="form-label">Nombres</label>
+                  <input type="text" class="form-control" id="nombreAdministrador" name="nombreAdministrador"
+                    value="<%=administrador[0].nombres_admin%>" placeholder="nombres completos" autocomplete="off">
                 </div>
-              </form>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido1Administrador" class="form-label">Primer Apellido</label>
+                  <input type="text" class="form-control" id="apellido1Administrador" name="apellido1Administrador"
+                    value="<%=administrador[0].primer_apellido_admin%>" placeholder="primer apellido" autocomplete="off"
+                    disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido2Administrador" class="form-label">Segundo Apellidos</label>
+                  <input type="text" class="form-control" id="apellido2Administrador" name="apellido2Administrador"
+                    value="<%=administrador[0].segundo_apellido_admin%>" placeholder="segundo apellido"
+                    autocomplete="off" disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="correoAdministrador" class="form-label">Correo</label>
+                  <input type="email" class="form-control" id="correoAdministrador" name="correoAdministrador"
+                    aria-describedby="correoAdministrador" autocomplete="off" value="<%=administrador[0].correo_admin%>"
+                    placeholder="correo@dominio.com" disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="estadoAdministrador" class="form-label">Estado Administrador</label>
+                  <select class="form-select" id="estadoAdministrador" name="estadoAdministrador" autocomplete="off">
+                    <option selected disabled value="0">seleccione un estado</option>
+                    <option value="1" <%=administrador[0].estado_admin ? 'selected' : '' %>>Activo</option>
+                    <option value="2" <%=administrador[0].estado_admin ? '' : 'selected' %>>Inactivo</option>
+                  </select>
+                </div>
             </div>
+            <div class="d-grid gap-2 mt-4">
+              <button class="btn btn-outline-primary" type="submit">Editar Administrador</button>
+            </div>
+            </form>
       </div>
     </div>
   </div>

@@ -19,8 +19,6 @@ module.exports = {
 
     frecuencia_cardiaca_historial: { type: "number" },
 
-    presion_arterial_historial: { type: "number" },
-
     fecha_historial: { type: "string", columnType: "date" },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
@@ -31,6 +29,6 @@ module.exports = {
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
 
-    cliente: { model: "clientes", columnName: 'id_cliente_historial' },
+    cliente: { model: "clientes", columnName: "id_cliente_historial" },
   },
 };

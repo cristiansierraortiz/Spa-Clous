@@ -1,4 +1,4 @@
-# fly.toml file generated for spa-clous on 2023-01-17T03:25:44-05:00
+# fly.toml file generated for spa-clous on 2023-01-22T20:35:11-05:00
 
 app = "spa-clous"
 kill_signal = "SIGINT"

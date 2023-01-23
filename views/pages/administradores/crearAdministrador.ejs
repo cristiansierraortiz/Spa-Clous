@@ -2,7 +2,7 @@
 
 <div class="content">
   <div class="container">
-    <div class="formulario">
+    <div id="formulario" class="formulario">
       <nav class="mt-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/administradores">Administradores</a></li>
@@ -25,48 +25,44 @@
           <% }) %>
             <div class="card-body">
               <form class="row g-4" id="formulario-admin" method="post" action="/procesar-crear-administrador">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="nombreAdministrador" class="form-label">Nombres</label>
-                    <input type="text" class="form-control" id="nombreAdministrador" name="nombreAdministrador"
-                      placeholder="nombres completos" autocomplete="off">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="apellido1Administrador" class="form-label">Primer Apellido</label>
-                    <input type="text" class="form-control" id="apellido1Administrador" name="apellido1Administrador"
-                      placeholder="primer apellido" autocomplete="off">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="apellido2Administrador" class="form-label">Segundo Apellidos</label>
-                    <input type="text" class="form-control" id="apellido2Administrador" name="apellido2Administrador"
-                      placeholder="segundo apellido" autocomplete="off">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="correoAdministrador" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="correoAdministrador" name="correoAdministrador"
-                      aria-describedby="correoAdministrador" autocomplete="off" placeholder="correo@dominio.com">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="contrasenaAdministrador" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="contrasenaAdministrador"
-                      name="contrasenaAdministrador" autocomplete="off" placeholder="contraseña">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="estadoAdministrador" class="form-label">Estado Administrador</label>
-                    <select class="form-select" id="estadoAdministrador" name="estadoAdministrador" autocomplete="off">
-                      <option selected disabled value="0">seleccione un estado</option>
-                      <option value="1">Activo</option>
-                      <option value="2">Inactivo</option>
-                    </select>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="nombreAdministrador" class="form-label">Nombres</label>
+                  <input type="text" class="form-control" id="nombreAdministrador" name="nombreAdministrador"
+                    placeholder="nombres completos" autocomplete="off">
                 </div>
-                <div class="row">
-                  <div class="d-grid gap-2 mt-4">
-                    <button class="btn btn-outline-primary" type="submit">Crear Administrador</button>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido1Administrador" class="form-label">Primer Apellido</label>
+                  <input type="text" class="form-control" id="apellido1Administrador" name="apellido1Administrador"
+                    placeholder="primer apellido" autocomplete="off">
                 </div>
-              </form>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido2Administrador" class="form-label">Segundo Apellidos</label>
+                  <input type="text" class="form-control" id="apellido2Administrador" name="apellido2Administrador"
+                    placeholder="segundo apellido" autocomplete="off">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="correoAdministrador" class="form-label">Correo</label>
+                  <input type="email" class="form-control" id="correoAdministrador" name="correoAdministrador"
+                    aria-describedby="correoAdministrador" autocomplete="off" placeholder="correo@dominio.com">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="contrasenaAdministrador" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="contrasenaAdministrador"
+                    name="contrasenaAdministrador" autocomplete="off" placeholder="contraseña">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="estadoAdministrador" class="form-label">Estado Administrador</label>
+                  <select class="form-select" id="estadoAdministrador" name="estadoAdministrador" autocomplete="off">
+                    <option selected disabled value="0">seleccione un estado</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                  </select>
+                </div>
             </div>
+            <div class="d-grid gap-2 mt-4">
+              <button class="btn btn-outline-primary" type="submit">Crear Administrador</button>
+            </div>
+            </form>
       </div>
     </div>
   </div>

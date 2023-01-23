@@ -25,33 +25,29 @@
           <% }) %>
             <div class="card-body">
               <form class="row g-4" id="formulario-cita" method="post" action="/procesar-crear-cita">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="idCliente" class="form-label">Cliente</label>
-                    <select class="form-select" id="idCliente" name="idCliente" autocomplete="off">
-                      <option selected disabled value="0">seleccione un cliente</option>
-                      <% clientes.forEach( cliente=> { %>
-                        <option value="<%=cliente.id%>">
-                          <%=cliente.nombres_cliente%>
-                            <%=cliente.primer_apellido_cliente%>
-                              <%=cliente.segundo_apellido_cliente%>
-                        </option>
-                        <% }) %>
-                    </select>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="fechaCita" class="form-label">Fecha Cita</label>
-                    <input type="date" class="form-control" id="fechaCita" name="fechaCita" placeholder="fecha cita"
-                      autocomplete="off">
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="idCliente" class="form-label">Cliente</label>
+                  <select class="form-select" id="idCliente" name="idCliente" autocomplete="off">
+                    <option selected disabled value="0">seleccione un cliente</option>
+                    <% clientes.forEach( cliente=> { %>
+                      <option value="<%=cliente.id%>">
+                        <%=cliente.nombres_cliente%>
+                          <%=cliente.primer_apellido_cliente%>
+                            <%=cliente.segundo_apellido_cliente%>
+                      </option>
+                      <% }) %>
+                  </select>
                 </div>
-                <div class="row">
-                  <div class="d-grid gap-2 mt-4">
-                    <button class="btn btn-outline-primary" type="submit">Crear Cita</button>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fechaCita" class="form-label">Fecha Cita</label>
+                  <input type="date" class="form-control" id="fechaCita" name="fechaCita" placeholder="fecha cita"
+                    autocomplete="off">
                 </div>
-              </form>
             </div>
+            <div class="d-grid gap-2 mt-4">
+              <button class="btn btn-outline-primary" type="submit">Crear Cita</button>
+            </div>
+            </form>
       </div>
     </div>
   </div>

@@ -24,72 +24,67 @@
           </div>
           <% }) %>
             <div class="card-body">
-              <form class="row g-4" id="formulario-admin" method="post" action="/procesar-editar-cliente">
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="idCliente" class="form-label">Id</label>
-                    <input type="text" class="form-control" id="idCliente" name="idCliente" value="<%=cliente[0].id%>"
-                      autocomplete="off" readonly>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="cedulaCliente" class="form-label">Cedula</label>
-                    <input type="text" class="form-control" id="cedulaCliente" name="cedulaCliente"
-                      value="<%=cliente[0].cedula_cliente%>" placeholder="cedula" autocomplete="off" disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="nombreCliente" class="form-label">Nombres</label>
-                    <input type="text" class="form-control" id="nombreCliente" name="nombreCliente"
-                      value="<%=cliente[0].nombres_cliente%>" placeholder="nombres completos" autocomplete="off"
-                      disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="apellido1Cliente" class="form-label">Primer Apellido</label>
-                    <input type="text" class="form-control" id="apellido1Cliente" name="apellido1Cliente"
-                      value="<%=cliente[0].primer_apellido_cliente%>" placeholder="primer apellido" autocomplete="off"
-                      disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="apellido2Cliente" class="form-label">Segundo Apellidos</label>
-                    <input type="text" class="form-control" id="apellido2Cliente" name="apellido2Cliente"
-                      value="<%=cliente[0].segundo_apellido_cliente%>" placeholder="segundo apellido" autocomplete="off"
-                      disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="sexoCliente" class="form-label">Sexo Cliente</label>
-                    <input type="text" class="form-control" id="sexoCliente" name="sexoCliente"
-                      value="<%=cliente[0].sexo_cliente%>" aria-describedby="sexoCliente" autocomplete="off" disabled>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="direccionCliente" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="direccionCliente" name="direccionCliente"
-                      value="<%=cliente[0].direccion_cliente%>" aria-describedby="direccionCliente" autocomplete="off"
-                      placeholder="calle 00 #00 - 00">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="contactoCliente" class="form-label">Contacto</label>
-                    <input type="text" class="form-control" id="contactoCliente" name="contactoCliente"
-                      value="<%=cliente[0].contacto_cliente%>" aria-describedby="contactoCliente" autocomplete="off"
-                      placeholder="000 0000 0000">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="correoCliente" class="form-label">Correo</label>
-                    <input type="email" class="form-control" id="correoCliente" name="correoCliente"
-                      value="<%=cliente[0].correo_cliente%>" aria-describedby="correoCliente" autocomplete="off"
-                      placeholder="correo@dominio.com">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="edadCliente" class="form-label">Edad</label>
-                    <input type="text" class="form-control" id="edadCliente" value="<%=cliente[0].edad_cliente%>"
-                      name="edadCliente" autocomplete="off" placeholder="edad">
-                  </div>
+              <form class="row g-4" id="formulario-cliente" method="post" action="/procesar-editar-cliente">
+                <div class="col-md-6 mb-3">
+                  <label for="idCliente" class="form-label">Id</label>
+                  <input type="text" class="form-control" id="idCliente" name="idCliente" value="<%=cliente[0].id%>"
+                    autocomplete="off" readonly>
                 </div>
-                <div class="row">
-                  <div class="d-grid gap-2 mt-4">
-                    <button class="btn btn-outline-primary" type="submit">Editar Cliente</button>
-                  </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cedulaCliente" class="form-label">Cedula</label>
+                  <input type="text" class="form-control" id="cedulaCliente" name="cedulaCliente"
+                    value="<%=cliente[0].cedula_cliente%>" placeholder="cedula" autocomplete="off" disabled>
                 </div>
-              </form>
+                <div class="col-md-6 mb-3">
+                  <label for="nombreCliente" class="form-label">Nombres</label>
+                  <input type="text" class="form-control" id="nombreCliente" name="nombreCliente"
+                    value="<%=cliente[0].nombres_cliente%>" placeholder="nombres completos" autocomplete="off" disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido1Cliente" class="form-label">Primer Apellido</label>
+                  <input type="text" class="form-control" id="apellido1Cliente" name="apellido1Cliente"
+                    value="<%=cliente[0].primer_apellido_cliente%>" placeholder="primer apellido" autocomplete="off"
+                    disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apellido2Cliente" class="form-label">Segundo Apellidos</label>
+                  <input type="text" class="form-control" id="apellido2Cliente" name="apellido2Cliente"
+                    value="<%=cliente[0].segundo_apellido_cliente%>" placeholder="segundo apellido" autocomplete="off"
+                    disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="sexoCliente" class="form-label">Sexo Cliente</label>
+                  <input type="text" class="form-control" id="sexoCliente" name="sexoCliente"
+                    value="<%=cliente[0].sexo_cliente%>" aria-describedby="sexoCliente" autocomplete="off" disabled>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="direccionCliente" class="form-label">Direccion</label>
+                  <input type="text" class="form-control" id="direccionCliente" name="direccionCliente"
+                    value="<%=cliente[0].direccion_cliente%>" aria-describedby="direccionCliente" autocomplete="off"
+                    placeholder="calle 00 #00 - 00">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="contactoCliente" class="form-label">Contacto</label>
+                  <input type="text" class="form-control" id="contactoCliente" name="contactoCliente"
+                    value="<%=cliente[0].contacto_cliente%>" aria-describedby="contactoCliente" autocomplete="off"
+                    placeholder="000 0000 0000">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="correoCliente" class="form-label">Correo</label>
+                  <input type="email" class="form-control" id="correoCliente" name="correoCliente"
+                    value="<%=cliente[0].correo_cliente%>" aria-describedby="correoCliente" autocomplete="off"
+                    placeholder="correo@dominio.com">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="edadCliente" class="form-label">Edad</label>
+                  <input type="text" class="form-control" id="edadCliente" value="<%=cliente[0].edad_cliente%>"
+                    name="edadCliente" autocomplete="off" placeholder="edad">
+                </div>
             </div>
+            <div class="d-grid gap-2 mt-4">
+              <button class="btn btn-outline-primary" type="submit">Editar Cliente</button>
+            </div>
+            </form>
       </div>
     </div>
   </div>

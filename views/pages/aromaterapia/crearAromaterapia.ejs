@@ -1,0 +1,46 @@
+<h6 class="titulo-pagina-menu">Aromaterapia</h6>
+
+<div class="content">
+  <div class="container">
+    <div class="formulario">
+      <nav class="mt-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/aromas">Aromaterapia</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Crear</li>
+        </ol>
+      </nav>
+
+      <div class="card mt-5">
+        <div class="mb-4">
+          <h6>Crear Aroma</h6>
+        </div>
+        <% flash.get('mensaje').forEach(function (msg) { %>
+          <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
+            <p>
+              <i><span class="fa fa-circle-xmark"></span></i>
+              <%=msg%>
+            </p>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <% }) %>
+            <div class="card-body">
+              <form class="row g-4" id="formulario-aromaterapia" method="post" action="/procesar-crear-aroma">
+                <div class="col-md-6 mb-3">
+                  <label for="nombreAroma" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombreAroma" name="nombreAroma" placeholder="nombre color"
+                    autocomplete="off">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="descripcionAroma" class="form-label">Descripción Aroma</label>
+                  <textarea class="form-control" id="descripcionAroma" name="descripcionAroma"
+                    placeholder="Esciba aquí..."></textarea>
+                </div>
+            </div>
+            <div class="d-grid gap-2 mt-4">
+              <button class="btn btn-outline-primary" type="submit">Crear Aroma</button>
+            </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>

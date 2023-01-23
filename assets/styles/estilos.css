@@ -12837,39 +12837,11 @@ a[data-toggle="collapse"] {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 90px;
+  padding-left: 20px;
+  padding-right: 17px;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-@media (min-width: 320px) and (max-width: 768px) {
-  #sidebar {
-    margin-left: -300px;
-  }
-
-  #sidebar.active {
-    margin-left: 0;
-  }
-
-  #sidebar .custom-menu {
-    display: inline-block;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    margin-right: -20px;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-  }
-
-  #content {
-    width: 100%;
-    padding: 0;
-    -webkit-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-  }
 }
 
 /* pagina administradores */
@@ -12899,12 +12871,14 @@ a[data-toggle="collapse"] {
 }
 
 .formulario {
-  width: 70%;
   margin: 0;
 }
 
 .formulario .card {
-  padding: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
   border: #000 solid 0.5px;
   border-radius: 10px;
 }
@@ -12926,4 +12900,68 @@ a[data-toggle="collapse"] {
 .alert-primary p {
   margin: 0;
   text-align: center;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  #sidebar {
+    margin-left: -300px;
+  }
+
+  #sidebar.active {
+    margin-left: 0px;
+  }
+
+  #sidebar .custom-menu {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    margin-right: -20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  #content {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 23px;
+    padding-right: 15px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 920px) {
+  #sidebar {
+    margin-left: -300px;
+  }
+
+  #sidebar.active {
+    margin-left: 0px;
+  }
+
+  #sidebar .custom-menu {
+    display: inline-block;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    margin-right: -20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+  #content {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 23px;
+    padding-right: 15px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
 }

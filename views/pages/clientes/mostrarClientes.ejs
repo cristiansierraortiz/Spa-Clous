@@ -14,83 +14,84 @@
         </div>
         <% }) %>
 
-        <% flash.get('mensajeInformativo').forEach(function (msg) { %>
-          <div class="alert alert-primary alert-dismissible fade show mt-5 mb-3" role="alert">
-            <p>
-              <i><span class="fa fa-circle-info"></span></i>
-              <%=msg%>
-            </p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          <% }) %>
+          <% flash.get('mensajeInformativo').forEach(function (msg) { %>
+            <div class="alert alert-primary alert-dismissible fade show mt-5 mb-3" role="alert">
+              <p>
+                <i><span class="fa fa-circle-info"></span></i>
+                <%=msg%>
+              </p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% }) %>
 
-          <div class="acciones-datatable mt-5">
-            <a href="/crear-cliente" class="btn btn-primary btn-sm"><span class="fa fa-user-plus"></span></a>
-          </div>
-          <div class="mt-4">
-            <table id="clientes" class="display nowrap">
-              <thead>
-                <tr>
-                  <th scope="col">id</th>
-                  <th scope="col">cedula</th>
-                  <th scope="col">nombre</th>
-                  <th scope="col">apellidos</th>
-                  <th scope="col">direccion</th>
-                  <th scope="col">contacto</th>
-                  <th scope="col">correo</th>
-                  <th scope="col">edad</th>
-                  <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <% clientes.forEach( cliente=> { %>
-                  <tr>
-                    <td>
-                      <%= cliente.id %>
-                    </td>
-                    <td>
-                      <%= cliente.cedula_cliente %>
-                    </td>
-                    <td>
-                      <%= cliente.nombres_cliente %>
-                    </td>
-                    <td>
-                      <% let apellidos %>
-                        <%= apellidos=cliente.primer_apellido_cliente + " " + cliente.segundo_apellido_cliente %>
-                    </td>
-                    <td>
-                      <%= cliente.direccion_cliente%>
-                    </td>
-                    <td>
-                      <%= cliente.contacto_cliente%>
-                    </td>
-                    <td>
-                      <%= cliente.correo_cliente%>
-                    </td>
-                    <td>
-                      <%= cliente.edad_cliente%>
-                    </td>
-                    <td>
-                      <div class="dropdown">
-                        <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button"
-                          data-bs-toggle="dropdown" aria-expanded="false">
-                          Opciones
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="/historial-cliente/<%=cliente.id%>">historial</a></li>
-                          <li><a class="dropdown-item" href="/resultados-encuestas-cliente/<%=cliente.id%>">encuestas</a></li>
-                          <li><a class="dropdown-item" href="/editar-cliente/<%=cliente.id%>">editar</a>
-                          </li>
-                          <li><a class="dropdown-item" href="/eliminar-cliente/<%=cliente.id%>">eliminar</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <% }) %>
-              </tbody>
-            </table>
-          </div>
+              <div class="acciones-datatable mt-5">
+                <a href="/crear-cliente" class="btn btn-primary btn-sm"><span class="fa fa-user-plus"></span></a>
+              </div>
+              <div class="mt-4">
+                <table id="clientes" class="display nowrap">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">cedula</th>
+                      <th scope="col">nombre</th>
+                      <th scope="col">apellidos</th>
+                      <th scope="col">direccion</th>
+                      <th scope="col">contacto</th>
+                      <th scope="col">correo</th>
+                      <th scope="col">edad</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% clientes.forEach( cliente=> { %>
+                      <tr>
+                        <td>
+                          <%= cliente.id %>
+                        </td>
+                        <td>
+                          <%= cliente.cedula_cliente %>
+                        </td>
+                        <td>
+                          <%= cliente.nombres_cliente %>
+                        </td>
+                        <td>
+                          <% let apellidos %>
+                            <%= apellidos=cliente.primer_apellido_cliente + " " + cliente.segundo_apellido_cliente %>
+                        </td>
+                        <td>
+                          <%= cliente.direccion_cliente%>
+                        </td>
+                        <td>
+                          <%= cliente.contacto_cliente%>
+                        </td>
+                        <td>
+                          <%= cliente.correo_cliente%>
+                        </td>
+                        <td>
+                          <%= cliente.edad_cliente%>
+                        </td>
+                        <td>
+                          <div class="dropdown">
+                            <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              Opciones
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/historial-cliente/<%=cliente.id%>">historial</a></li>
+                              <li><a class="dropdown-item"
+                                  href="/resultados-encuestas-cliente/<%=cliente.id%>">encuestas</a></li>
+                              <li><a class="dropdown-item" href="/editar-cliente/<%=cliente.id%>">editar</a>
+                              </li>
+                              <li><a class="dropdown-item" href="/eliminar-cliente/<%=cliente.id%>">eliminar</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <% }) %>
+                  </tbody>
+                </table>
+              </div>
     </div>
   </div>
 

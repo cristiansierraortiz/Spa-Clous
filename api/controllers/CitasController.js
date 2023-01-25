@@ -5,6 +5,16 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+function obtenerFechaCorta() {
+  let fecha = new Date();
+  let dia = fecha.getDate();
+  let mes = fecha.getMonth() + 1;
+  let ano = fecha.getFullYear();
+  let fechaFinal = dia + "-" + mes + "-" + ano;
+
+  return fechaFinal;
+}
+
 module.exports = {
   citas: async (peticion, respuesta) => {
     if (peticion.session && peticion.session.administrador) {
@@ -93,6 +103,36 @@ module.exports = {
       return respuesta.redirect("/citas");
     } else {
       return respuesta.redirect("/");
+    }
+  },
+
+  obtenerCitaCliente: async (peticion, respuesta) => {
+    try {
+      let resultado = await sails.sendNativeQuery(
+        "select * from public.citas \
+        inner join public.clientes on citas.id_cliente_cita = clientes.id_cliente \
+        where estado_cita = false and fecha_cita <= current_date;"
+      );
+      let citas = resultado.rows;
+      respuesta.status(200).json({ datos: citas });
+    } catch (error) {
+      respuesta.status(500).json({ mensaje: error });
+    }
+  },
+
+  insertarDatosCitaCliente: async (peticion, respuesta) => {
+    try {
+      let { idCliente, saturacion, ritmoCardiaco } = peticion.query;
+      await Historial.create({
+        cliente: idCliente,
+        saturacion_historial: saturacion,
+        frecuencia_cardiaca_historial: ritmoCardiaco,
+        fecha_historial: obtenerFechaCorta(),
+      });
+      let historial = "Historial registrado correctamente!";
+      respuesta.status(200).json({ mensaje: historial });
+    } catch (error) {
+      respuesta.status(500).json({ mensaje: error });
     }
   },
 };

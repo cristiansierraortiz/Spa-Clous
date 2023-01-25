@@ -146,4 +146,13 @@ module.exports.routes = {
    * not match any of those, it is matched against static assets.             *
    *                                                                          *
    ***************************************************************************/
+
+  //  ╔═╗╔═╗╦  ╔═╗╔╗╔╔╦╗╔═╗╔═╗╦╔╗╔╔╦╗╔═╗
+  //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
+  //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
+
+  "GET /api/v1/obtener-cita-cliente": "CitasController.obtenerCitaCliente",
+
+  "POST /api/v1/insertar-datos-cita-cliente": "CitasController.insertarDatosCitaCliente",
+
 };

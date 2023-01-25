@@ -8,8 +8,17 @@
     });
   };
   fullHeight();
+
   $("#sidebarCollapse").on("click", function () {
     $("#sidebar").toggleClass("active");
+
+    if ($("#iconoToogle").hasClass("fa-angle-left")) {
+      $("#iconoToogle").removeClass("fa-angle-left");
+      $("#iconoToogle").addClass("fa-angle-right");
+    } else {
+      $("#iconoToogle").removeClass("fa-angle-right");
+      $("#iconoToogle").addClass("fa-angle-left");
+    }
   });
 })(jQuery);
 
@@ -38,6 +47,7 @@ $(function () {
 
 $(document).ready(function () {
   $("#administradores").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -46,6 +56,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#clientes").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -54,6 +65,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#historialClientes").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -62,6 +74,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#citas").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -70,6 +83,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#colores").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -78,6 +92,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#aromas").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -86,6 +101,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#generosMusicales").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -94,6 +110,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#terapias").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },
@@ -102,6 +119,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $("#encuestas").DataTable({
+    scrollX: true,
     language: {
       url: "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json",
     },

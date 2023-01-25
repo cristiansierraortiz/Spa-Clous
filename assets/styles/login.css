@@ -4,15 +4,6 @@
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    height: 100vh;
-}
-
 h1 {
     font-weight: bold;
     margin: 0;
@@ -84,7 +75,10 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 50px;
+    padding-top: 8em;
+    padding-bottom: 8em;
+    padding-left: 50px;
+    padding-right: 50px;
     height: 100%;
     text-align: center;
 }
@@ -97,6 +91,10 @@ input {
     width: 100%;
 }
 
+.contenido-login {
+    margin: 0;
+}
+
 .container-login {
     background-color: transparent;
     display: flex;
@@ -105,6 +103,7 @@ input {
     justify-content: center;
     padding-left: 100px;
     padding-right: 100px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form-container {
@@ -128,6 +127,7 @@ input {
 .bg-login img {
     width: 90%;
     height: 70%;
+    padding-top: 80px;
 }
 
 .social-container {
@@ -179,9 +179,25 @@ input {
         visibility: hidden;
     }
 
+    .container-login {
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40%;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
     form {
-        padding-top: 130px;
-        padding-bottom: 130px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    button {
+        width: 190px;
     }
 }
 
@@ -199,11 +215,17 @@ input {
     .container-login {
         padding-left: 20px;
         padding-right: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     form {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    button {
+        width: 260px;
     }
 }
 
@@ -224,7 +246,7 @@ input {
     }
 
     form {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }

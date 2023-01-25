@@ -11,40 +11,41 @@
     <% /* <meta name="robots" content="noindex"> */%>
 
       <!--STYLES ADD-->
-      <link rel="stylesheet" href="/styles/estilos.css">
-      <link rel="stylesheet" href="/styles/importer.css">
       <link rel="stylesheet" href="/styles/login.css">
+      <link rel="icon" href="favicon.ico">
       <!--STYLES ADD END-->
 
 </head>
 
 <body>
 
-  <div class="container-login" id="container">
-    <div class="bg-login">
-      <img src="../images/bg_login.jpg" alt="bg_login">
-    </div>
-    <div class="form-container sign-in-container">
-      <form action="/procesar-inicio-sesion" method="post">
-        <h1>Inicio de Sesión</h1>
-        <div class="social-container">
-          <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="gmail"><i class="fab fa-google-plus-g"></i></a>
-        </div>
-        <span>o utilice su cuenta</span>
-        <input type="email" name="correo" id="correo" placeholder="Correo" />
-        <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" />
-        <a href="#">Olvido su contraseña?</a>
-        <button>Ingresar</button>
-        <div class="mensaje-error">
-          <% flash.get('mensajeLogin').forEach(function (msg) { %>
-            <p>
-              <i><span class="fa fa-circle-xmark"></span></i>
-              <%=msg%>
-            </p>
-            <% }) %>
-        </div>
-      </form>
+  <div class="container">
+    <div class="container-login" id="container">
+      <div class="bg-login">
+        <img src="../images/bg_login.jpg" alt="bg_login">
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="/procesar-inicio-sesion" method="post">
+          <h1>Inicio de Sesión</h1>
+          <div class="social-container">
+            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="gmail"><i class="fab fa-google-plus-g"></i></a>
+          </div>
+          <span>o utilice su cuenta</span>
+          <input type="email" name="correo" id="correo" placeholder="Correo" />
+          <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" />
+          <a href="#">Olvido su contraseña?</a>
+          <button>Ingresar</button>
+          <div class="mensaje-error">
+            <% flash.get('mensajeLogin').forEach(function (msg) { %>
+              <p>
+                <i><span class="fa fa-circle-xmark"></span></i>
+                <%=msg%>
+              </p>
+              <% }) %>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 

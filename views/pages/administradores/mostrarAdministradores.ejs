@@ -5,7 +5,7 @@
     <div class="contenido">
 
       <% flash.get('mensaje').forEach(function (msg) { %>
-        <div class="alert alert-success alert-dismissible fade show mt-5 mb-3" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mt-5 mb-3" role="alert" id="alerts">
           <p>
             <i><span class="fa fa-circle-check"></span></i>
             <%=msg%>
@@ -59,11 +59,11 @@
                       </span>
                     </td>
                     <td>
-                      <div class="dropdown">
-                        <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button"
-                          data-bs-toggle="dropdown" aria-expanded="false">
+                      <div class="btn-group dropend">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" "button" data-bs-toggle="dropdown"
+                          aria-expanded="false">
                           Opciones
-                        </a>
+                        </button>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="/editar-administrador/<%=administrador.id%>">editar</a>
                           </li>

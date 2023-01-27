@@ -122,4 +122,19 @@ module.exports = {
       return respuesta.redirect("/");
     }
   },
+
+  obtenerTerapia: async (peticion, respuesta) => {
+    try {
+      let idTerapia = peticion.params.terapiaId;
+      let resultado = await Terapias.findOne({
+        id: idTerapia,
+      })
+        .populate("color")
+        .populate("aroma")
+        .populate("genero");
+      respuesta.status(200).json({ datos: resultado });
+    } catch (error) {
+      respuesta.status(500).json({ mensaje: error });
+    }
+  },
 };

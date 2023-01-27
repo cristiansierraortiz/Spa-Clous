@@ -170,6 +170,26 @@ CSS sidebar
   transition: all 0.3s;
 }
 
+#content .alert.alert-success {
+  position: absolute;
+  min-width: 23%;
+  top: 20px;
+  right: 160px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#content .alert.alert-danger {
+  position: absolute;
+  min-width: 23%;
+  top: 70px;
+  right: 150px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
 div.dataTables_wrapper {
   width: auto;
   margin: 0 auto;
@@ -275,6 +295,26 @@ div.dataTables_wrapper {
     border: #000 solid 0.5px;
     border-radius: 10px;
   }
+
+  #content .alert.alert-success {
+    position: absolute;
+    min-width: 23%;
+    top: 65px;
+    right: 0px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  #content .alert.alert-danger {
+    position: absolute;
+    min-width: 23%;
+    top: 50px;
+    right: 0;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 920px) {
@@ -308,5 +348,25 @@ div.dataTables_wrapper {
     width: 100%;
     padding-left: 0;
     margin: 0;
+  }
+
+  #content .alert.alert-success {
+    position: absolute;
+    min-width: 23%;
+    top: 0px;
+    right: 60px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  #content .alert.alert-danger {
+    position: absolute;
+    min-width: 23%;
+    top: 36px;
+    right: 70px;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
   }
 }

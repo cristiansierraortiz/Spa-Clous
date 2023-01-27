@@ -46,6 +46,12 @@ $(function () {
 });
 
 $(document).ready(function () {
+  setTimeout(function () {
+    $("#alerts").hide(600);
+  }, 5500);
+});
+
+$(document).ready(function () {
   $("#administradores").DataTable({
     scrollX: true,
     language: {

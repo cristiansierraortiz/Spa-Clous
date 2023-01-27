@@ -151,8 +151,17 @@ module.exports.routes = {
   //  ╠═╣╠═╝║  ║╣ ║║║ ║║╠═╝║ ║║║║║ ║ ╚═╗
   //  ╩ ╩╩  ╩  ╚═╝╝╚╝═╩╝╩  ╚═╝╩╝╚╝ ╩ ╚═╝
 
-  "GET /api/v1/obtener-cita-cliente": "CitasController.obtenerCitaCliente",
+  "GET /api/v1/obtener-id-cita-cliente-reciente":
+    "CitasController.obtenerIdCitaClienteReciente",
 
-  "POST /api/v1/insertar-datos-cita-cliente": "CitasController.insertarDatosCitaCliente",
+  "GET /api/v1/obtener-cita-cliente-reciente/:citaId":
+    "CitasController.obtenerCitaClienteReciente",
 
+  "GET /api/v1/validar-estado-cita-cliente/:citaId":
+    "CitasController.validarEstadoCitaCliente",
+
+  "POST /api/v1/insertar-datos-cita-cliente":
+    "CitasController.insertarDatosCitaCliente",
+
+  "GET /api/v1/obtener-terapia/:terapiaId": "TerapiasController.obtenerTerapia",
 };

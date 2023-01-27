@@ -3,26 +3,29 @@
 <div class="content">
   <div class="container">
     <div class="formulario">
-      <nav class="mt-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/generos-musicales">Musicoterapia</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Editar</li>
-        </ol>
-      </nav>
 
-      <div class="card mt-5">
-        <div class="mb-4">
-          <h6>Editar Género Musical</h6>
+      <% flash.get('mensaje').forEach(function (msg) { %>
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert" id="alerts">
+          <p>
+            <i><span class="fa fa-circle-xmark"></span></i>
+            <%=msg%>
+          </p>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        <% flash.get('mensaje').forEach(function (msg) { %>
-          <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
-            <p>
-              <i><span class="fa fa-circle-xmark"></span></i>
-              <%=msg%>
-            </p>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          <% }) %>
+        <% }) %>
+
+          <nav class="mt-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/generos-musicales">Musicoterapia</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Editar</li>
+            </ol>
+          </nav>
+
+          <div class="card mt-5">
+            <div class="mb-4">
+              <h6>Editar Género Musical</h6>
+            </div>
+
             <div class="card-body">
               <form class="row g-4" id="formulario-musicoterapia" method="post"
                 action="/procesar-editar-genero-musical">
@@ -46,7 +49,7 @@
               <button class="btn btn-outline-primary" type="submit">Editar Genero Musical</button>
             </div>
             </form>
-      </div>
+          </div>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@ function obtenerFechaCorta() {
   let dia = fecha.getDate();
   let mes = fecha.getMonth() + 1;
   let ano = fecha.getFullYear();
-  let fechaFinal = dia + "-" + mes + "-" + ano;
+  let fechaFinal = ano + "-" + "0" + mes + "-" + dia;
 
   return fechaFinal;
 }
@@ -106,15 +106,58 @@ module.exports = {
     }
   },
 
-  obtenerCitaCliente: async (peticion, respuesta) => {
+  obtenerIdCitaClienteReciente: async (peticion, respuesta) => {
     try {
+      let resultado = await sails.sendNativeQuery(
+        "select min(id_cita) from public.citas where estado_cita = false and fecha_cita = current_date limit 1"
+      );
+
+      if (resultado.rowCount === 0) {
+        respuesta.status(404).json({ mensaje: "No hay citas pendientes" });
+      } else {
+        let idCita = resultado.rows;
+        respuesta.status(200).json({ datos: idCita });
+      }
+    } catch (error) {
+      respuesta.status(500).json({ mensaje: error });
+    }
+  },
+
+  obtenerCitaClienteReciente: async (peticion, respuesta) => {
+    try {
+      let idCita = peticion.params.citaId;
       let resultado = await sails.sendNativeQuery(
         "select * from public.citas \
         inner join public.clientes on citas.id_cliente_cita = clientes.id_cliente \
-        where estado_cita = false and fecha_cita <= current_date;"
+        where id_cita = " + idCita
       );
-      let citas = resultado.rows;
-      respuesta.status(200).json({ datos: citas });
+
+      if (resultado.rowCount === 0) {
+        respuesta.status(404).json({ mensaje: "No hay citas pendientes" });
+      } else {
+        let citas = resultado.rows;
+        respuesta.status(200).json({ datos: citas });
+      }
+    } catch (error) {
+      respuesta.status(500).json({ mensaje: error });
+    }
+  },
+
+  validarEstadoCitaCliente: async (peticion, respuesta) => {
+    try {
+      let idCita = peticion.params.citaId;
+      let resultado = await sails.sendNativeQuery(
+        "select id_cita, estado_cita from public.citas \
+        inner join public.clientes on citas.id_cliente_cita = clientes.id_cliente \
+        where id_cita = " + idCita
+      );
+
+      if (resultado.rowCount === 0) {
+        respuesta.status(404).json({ mensaje: "No existe la cita" });
+      } else {
+        let cita = resultado.rows;
+        respuesta.status(200).json({ datos: cita });
+      }
     } catch (error) {
       respuesta.status(500).json({ mensaje: error });
     }

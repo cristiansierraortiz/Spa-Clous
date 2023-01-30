@@ -10,7 +10,7 @@ function obtenerFechaCorta() {
   let dia = fecha.getDate();
   let mes = fecha.getMonth() + 1;
   let ano = fecha.getFullYear();
-  let fechaFinal = dia + "-" + mes + "-" + ano;
+  let fechaFinal = ano + "-" + "0" + mes + "-" + dia;
 
   return fechaFinal;
 }

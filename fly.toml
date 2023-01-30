@@ -1,6 +1,6 @@
-# fly.toml file generated for clous-spa on 2023-01-24T20:55:20-05:00
+# fly.toml file generated for clous-spa-dev on 2023-01-30T11:11:03-05:00
 
-app = "clous-spa"
+app = "clous-spa-dev"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []

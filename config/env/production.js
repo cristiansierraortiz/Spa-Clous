@@ -137,7 +137,7 @@ module.exports = {
      *                                                                          *
      ***************************************************************************/
     cors: {
-      allowOrigins: ["https://spa-clous.fly.dev", "http://localhost"],
+      allowOrigins: ["https://clous-spa-dev.fly.dev", "http://localhost"],
     },
   },
 
@@ -244,7 +244,7 @@ module.exports = {
      * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
      *                                                                          *
      ***************************************************************************/
-    onlyAllowOrigins: ["https://spa-clous.fly.dev", "http://localhost"],
+    onlyAllowOrigins: ["https://clous-spa-dev.fly.dev", "http://localhost"],
     // beforeConnect: function (handshake, proceed) {
     //   return proceed(undefined, true);
     // },
